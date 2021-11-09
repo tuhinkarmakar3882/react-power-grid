@@ -4,7 +4,11 @@ import '../styles/PowerTable.scss'
 const PowerTable = ({
   headerColumns = [],
   tableData = [],
-  loading = false
+  loading = false,
+  hasNext = false,
+  hasPrevious = false,
+  currentPage = 1,
+  totalPages = 1
 }) => {
   const handleToggleAction = ({ target }) => {
     const columnName = target.getAttribute('data-column-name')
@@ -58,9 +62,9 @@ const PowerTable = ({
       </main>
 
       <footer>
-        <button>Previous</button>
-        <p>Page Number</p>
-        <button>Next</button>
+        <button disabled={!hasPrevious}>Previous</button>
+        <p>{currentPage} of {totalPages}</p>
+        <button disabled={!hasNext}>Next</button>
       </footer>
     </div>
   )

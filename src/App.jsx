@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import PowerTable from './components/PowerTable'
 
 const App = () => {
   const [headerColumns, setHeaderColumns] = useState([])
   const [tableData, setTableData] = useState([])
+  const [hasNext, setHasNext] = useState(true)
+  const [hasPrevious, setHasPrevious] = useState(false)
+
+  const powerTableContainer = useRef(null)
+
+  const loadDataFromApi = (evt) => {
+    console.log(evt.detail)
+  }
 
   useEffect(() => {
     setHeaderColumns([
@@ -13,7 +21,6 @@ const App = () => {
       { id: 3, name: 'Phone number' },
       { id: 4, name: 'Something Else' }
     ])
-
     setTableData([
       ['1', 'SuperName', 25, '+919362145879', 'Ice Cream'],
       ['2', 'New Super Name', 5, '+919362145879', 'Ice Cream'],
@@ -22,14 +29,22 @@ const App = () => {
       ['5', 'SuperName', 75, '+919362145879', 'Ice Cream']
     ])
 
-    document.getElementById('power-table-container').addEventListener(
-      'sort', (e) => console.log(e.detail)
-    )
+    setHasNext(true)
+    setHasPrevious(false)
+
+    powerTableContainer.current.addEventListener('sort', loadDataFromApi)
   }, [])
 
+  useEffect(() => () => powerTableContainer.current.removeEventListener('sort', loadDataFromApi), [])
+
   return (
-    <section id="power-table-container">
-      <PowerTable headerColumns={headerColumns} tableData={tableData}/>
+    <section ref={powerTableContainer}>
+      <PowerTable
+        headerColumns={headerColumns}
+        tableData={tableData}
+        hasNext={hasNext}
+        hasPrevious={hasPrevious}
+      />
     </section>
   )
 }
