@@ -1,6 +1,13 @@
 import React from 'react'
 import '../styles/PowerTable.scss'
 
+//  Todo: At the top add filters (Dropdown)
+//  Todo: At the top add searchBar
+//  Todo: At the top add moreFilters
+//  Todo: Add a Multiselect option
+//  Todo: Add support for rendering custom components in each cell
+//  Todo: Bubble one event onclick of any column/row
+
 const PowerTable = ({
   headerColumns = [],
   tableData = [],
@@ -25,6 +32,20 @@ const PowerTable = ({
       bubbles: true,
       detail: {
         [columnName]: newSortOrder
+      }
+    })
+
+    target.dispatchEvent(event)
+  }
+
+  const handlePaginationEvent = ({ target }) => {
+    const actionType = target.getAttribute('data-action')
+
+    const event = new CustomEvent('pagination', {
+      bubbles: true,
+      detail: {
+        currentPage,
+        mode: actionType
       }
     })
 
@@ -61,10 +82,12 @@ const PowerTable = ({
         {loading ? showSpinner() : renderRows()}
       </main>
 
-      <footer>
-        <button disabled={!hasPrevious}>Previous</button>
+      <footer onClick={handlePaginationEvent}>
+        <button disabled={!hasPrevious} data-action="backward">Previous</button>
+
         <p>{currentPage} of {totalPages}</p>
-        <button disabled={!hasNext}>Next</button>
+
+        <button disabled={!hasNext} data-action="forward">Next</button>
       </footer>
     </div>
   )
