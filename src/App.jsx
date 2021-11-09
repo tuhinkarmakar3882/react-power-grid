@@ -33,9 +33,13 @@ const App = () => {
     setHasPrevious(false)
 
     powerTableContainer.current.addEventListener('sort', loadDataFromApi)
+    powerTableContainer.current.addEventListener('pagination', loadDataFromApi)
   }, [])
 
-  useEffect(() => () => powerTableContainer.current.removeEventListener('sort', loadDataFromApi), [])
+  useEffect(() => () => {
+    powerTableContainer.current.removeEventListener('sort', loadDataFromApi)
+    powerTableContainer.current.removeEventListener('pagination', loadDataFromApi)
+  }, [])
 
   return (
     <section ref={powerTableContainer}>
