@@ -48,6 +48,9 @@ const App = () => {
         tableData={tableData}
         hasNext={hasNext}
         hasPrevious={hasPrevious}
+        loading={false}
+        currentPage={1}
+        totalPages={1}
       />
     </section>
   )
