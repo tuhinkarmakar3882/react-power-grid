@@ -1,3 +1,32 @@
-* + * {
-  margin: 1rem 0;
+.power-table {
+  --minimimun-column-width: 100px;
+  --maximum-column-width: 1fr;
+  --table-body-margin: 1rem 0;
+  --header-font-weight: 600;
+  --header-font-size: 1.2rem;
+  --table-row-gap: 0.5rem 0;
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--minimimun-column-width), var(--maximum-column-width)));
+  }
+
+  header {
+    font-weight: var(--header-font-weight);
+    font-size: var(--header-font-size);
+  }
+
+  main {
+    margin: var(--table-body-margin);
+
+    .row {
+      margin: var(--table-row-gap);
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
 }

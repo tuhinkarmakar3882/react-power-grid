@@ -22,7 +22,9 @@ module.exports = {
     'react',
     'jest'
   ],
-  rules: {},
+  rules: {
+    'react/prop-types': 'off'
+  },
   settings: {
     react: {
       version: 'detect' // React version. "detect" automatically picks the version you have installed.
