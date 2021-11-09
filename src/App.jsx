@@ -22,7 +22,7 @@ const App = () => {
       { id: 4, name: 'Something Else' }
     ])
     setTableData([
-      ['1', 'SuperName', 25, '+919362145879', 'Ice Cream'],
+      ['1', 'SuperName', 25, '+919362145879', 'Apple'],
       ['2', 'New Super Name', 5, '+919362145879', 'Ice Cream'],
       ['3', 'SuperName', 25, '+919362145879', 'Ice Cream'],
       ['4', 'SuperName', 15, '+919362145879', 'Ice Cream'],

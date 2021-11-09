@@ -1,8 +1,6 @@
 import React from 'react'
 
-const PowerTableHeader = ({
-  columns = []
-}) => {
+const PowerTableHeader = ({ columns = [] }) => {
   const handleToggleAction = ({ target }) => {
     const columnName = target.getAttribute('data-column-name')
     const previousSortOrder = target.getAttribute('data-sort-order')
