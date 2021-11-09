@@ -30,3 +30,21 @@
     gap: 1rem;
   }
 }
+
+.loader {
+  height: 3rem;
+  width: 3rem;
+  border-top: 2px solid red;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

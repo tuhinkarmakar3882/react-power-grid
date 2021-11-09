@@ -16,15 +16,19 @@ const App = () => {
 
     setTableData([
       ['1', 'SuperName', 25, '+919362145879', 'Ice Cream'],
-      ['2', 'New Super Name', 25, '+919362145879', 'Ice Cream'],
+      ['2', 'New Super Name', 5, '+919362145879', 'Ice Cream'],
       ['3', 'SuperName', 25, '+919362145879', 'Ice Cream'],
-      ['4', 'SuperName', 25, '+919362145879', 'Ice Cream'],
-      ['5', 'SuperName', 25, '+919362145879', 'Ice Cream']
+      ['4', 'SuperName', 15, '+919362145879', 'Ice Cream'],
+      ['5', 'SuperName', 75, '+919362145879', 'Ice Cream']
     ])
+
+    document.getElementById('power-table-container').addEventListener(
+      'sort', (e) => console.log(e.detail)
+    )
   }, [])
 
   return (
-    <section>
+    <section id="power-table-container">
       <PowerTable headerColumns={headerColumns} tableData={tableData}/>
     </section>
   )
