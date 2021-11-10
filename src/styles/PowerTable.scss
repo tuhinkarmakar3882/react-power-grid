@@ -11,6 +11,17 @@
     grid-template-columns: repeat(auto-fit, minmax(var(--minimimun-column-width), var(--maximum-column-width)));
   }
 
+  nav.power-table-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    ul {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
   header {
     font-weight: var(--header-font-weight);
     font-size: var(--header-font-size);
@@ -36,23 +47,5 @@
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-  }
-}
-
-.loader {
-  height: 3rem;
-  width: 3rem;
-  border-top: 2px solid red;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }

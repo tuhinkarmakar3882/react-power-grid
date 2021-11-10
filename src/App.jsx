@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PowerTable from './components/PowerTable'
-import PowerTableFilter from './components/PowerTableFilter'
+import PowerTableTopBar from './components/PowerTableTopBar'
 import PowerTableHeader from './components/PowerTableHeader'
 import PowerTableBody from './components/PowerTableBody'
 import PowerTableFooter from './components/PowerTableFooter'
+import PowerTableSearchBar from './components/PowerTableSearchBar'
+import PowerTableMoreFilters from './components/PowerTableMoreFilters'
 
 const App = () => {
   const [headerColumns, setHeaderColumns] = useState([])
   const [tableData, setTableData] = useState([])
   const [hasNext, setHasNext] = useState(true)
   const [hasPrevious, setHasPrevious] = useState(false)
-
   const powerTableContainer = useRef(null)
 
   const loadDataFromApi = (evt) => {
@@ -38,11 +39,12 @@ const App = () => {
 
     powerTableContainer.current.addEventListener('sort', loadDataFromApi)
     powerTableContainer.current.addEventListener('pagination', loadDataFromApi)
+    powerTableContainer.current.addEventListener('search', loadDataFromApi)
   }, [])
-
   useEffect(() => () => {
     powerTableContainer.current.removeEventListener('sort', loadDataFromApi)
     powerTableContainer.current.removeEventListener('pagination', loadDataFromApi)
+    powerTableContainer.current.removeEventListener('search', loadDataFromApi)
   }, [])
 
   return (
@@ -50,7 +52,11 @@ const App = () => {
       <PowerTable
         loading={false}
         topBar={
-          <PowerTableFilter filters={undefined} moreFilters={undefined} searchBar={true}/>
+          <PowerTableTopBar
+            filters={undefined}
+            moreFilters={<PowerTableMoreFilters moreFilters={undefined}/>}
+            searchBar={<PowerTableSearchBar/>}
+          />
         }
         tableHeader={<PowerTableHeader columns={headerColumns}/>}
         tableBody={<PowerTableBody tableData={tableData}/>}
