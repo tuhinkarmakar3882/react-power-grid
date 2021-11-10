@@ -4,27 +4,19 @@ const PowerTableTopBar = ({ filters, moreFilters, searchBar }) => {
   return (
     <nav className="power-table-filter">
       <ul className="left-filters">
-        <li>
-          <label>Status
-            <select className="filter">
-              <option>All</option>
-            </select>
-          </label>
-        </li>
-        <li>
-          <label>Status
-            <select className="filter">
-              <option>All</option>
-            </select>
-          </label>
-        </li>
-        <li>
-          <label>Status
-            <select className="filter">
-              <option>All</option>
-            </select>
-          </label>
-        </li>
+        {filters.map(item => (
+          <li key={item.name}>
+            {
+              item?.custom ||
+              <label>
+                {item.name}
+                <select name={item.name}>
+                  {item.options.map((option, idx) => (<option key={idx} value={option}>{option}</option>))}
+                </select>
+              </label>
+            }
+          </li>
+        ))}
       </ul>
 
       <ul className="right-filters">

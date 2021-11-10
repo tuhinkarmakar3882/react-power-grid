@@ -4,10 +4,8 @@ import Spinner from '../Spinner'
 
 //  Todo:
 //   At the top add filters (Dropdown)
-//   At the top add searchBar
 //   At the top add moreFilters
 //   Add a Multiselect option
-//   Add support for rendering custom components in each cell
 //   Bubble one event onclick of any column/row
 
 const PowerTable = ({

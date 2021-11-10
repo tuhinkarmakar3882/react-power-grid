@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import PowerTable from './components/PowerTable'
 import PowerTableTopBar from './components/PowerTable/PowerTableTopBar'
 import PowerTableHeader from './components/PowerTable/PowerTableHeader'
@@ -8,35 +8,60 @@ import PowerTableSearchBar from './components/PowerTable/PowerTableSearchBar'
 import PowerTableMoreFilters from './components/PowerTable/PowerTableMoreFilters'
 
 const App = () => {
-  const [headerColumns, setHeaderColumns] = useState([])
-  const [tableData, setTableData] = useState([])
-  const [hasNext, setHasNext] = useState(true)
-  const [hasPrevious, setHasPrevious] = useState(false)
   const powerTableContainer = useRef(null)
+
+  const headerColumns = [
+    { id: 0, name: 'ID' },
+    { id: 1, name: 'Name' },
+    { id: 2, name: 'Age' },
+    { id: 3, name: 'Phone number' },
+    { id: 4, name: 'Something Else' }
+  ]
+  const tableData = [
+    ['1', 'SuperName', 25, '+919362145879', 'Apple'],
+    ['2', 'New Super Name', 5, '+919362145879', 'Ice Cream'],
+    ['3', 'SuperName', 25, '+919362145879', 'Ice Cream'],
+    ['4', 'SuperName', 15, '+919362145879', 'Ice Cream'],
+    ['5', 'SuperName', 75, '+919362145879', 'Ice Cream']
+  ]
+  const hasNext = true
+  const hasPrevious = false
+  const filter = [
+    {
+      name: 'Status',
+      type: 'dropdown',
+      options: [
+        'Option 1',
+        'Option 2',
+        'Option 4'
+      ]
+    },
+    {
+      name: 'Market',
+      type: 'dropdown',
+      options: [
+        'Option 1',
+        'Option 2',
+        'Option 4'
+      ]
+    },
+    {
+      name: 'Account',
+      type: 'dropdown',
+      options: [
+        'Option 1',
+        'Option 2',
+        'Option 4'
+      ],
+      custom: null
+    }
+  ]
 
   const loadDataFromApi = (evt) => {
     console.log(evt.detail)
   }
 
   useEffect(() => {
-    setHeaderColumns([
-      { id: 0, name: 'ID' },
-      { id: 1, name: 'Name' },
-      { id: 2, name: 'Age' },
-      { id: 3, name: 'Phone number' },
-      { id: 4, name: 'Something Else' }
-    ])
-    setTableData([
-      ['1', 'SuperName', 25, '+919362145879', 'Apple'],
-      ['2', 'New Super Name', 5, '+919362145879', 'Ice Cream'],
-      ['3', 'SuperName', 25, '+919362145879', 'Ice Cream'],
-      ['4', 'SuperName', 15, '+919362145879', 'Ice Cream'],
-      ['5', 'SuperName', 75, '+919362145879', 'Ice Cream']
-    ])
-
-    setHasNext(true)
-    setHasPrevious(false)
-
     powerTableContainer.current.addEventListener('sort', loadDataFromApi)
     powerTableContainer.current.addEventListener('pagination', loadDataFromApi)
     powerTableContainer.current.addEventListener('search', loadDataFromApi)
@@ -53,7 +78,7 @@ const App = () => {
         loading={false}
         topBar={
           <PowerTableTopBar
-            filters={undefined}
+            filters={filter}
             moreFilters={<PowerTableMoreFilters moreFilters={undefined}/>}
             searchBar={<PowerTableSearchBar/>}
           />

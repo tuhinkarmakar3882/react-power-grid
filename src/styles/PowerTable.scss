@@ -18,7 +18,12 @@
 
     ul {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
+
+      select {
+        margin-left: 0.5rem;
+      }
     }
   }
 
