@@ -1,6 +1,6 @@
 import React from 'react'
-import '../styles/PowerTable.scss'
-import Spinner from './Spinner'
+import '../../styles/PowerTable.scss'
+import Spinner from '../Spinner'
 
 //  Todo:
 //   At the top add filters (Dropdown)

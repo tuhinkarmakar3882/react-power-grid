@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PowerTable from './components/PowerTable'
-import PowerTableTopBar from './components/PowerTableTopBar'
-import PowerTableHeader from './components/PowerTableHeader'
-import PowerTableBody from './components/PowerTableBody'
-import PowerTableFooter from './components/PowerTableFooter'
-import PowerTableSearchBar from './components/PowerTableSearchBar'
-import PowerTableMoreFilters from './components/PowerTableMoreFilters'
+import PowerTableTopBar from './components/PowerTable/PowerTableTopBar'
+import PowerTableHeader from './components/PowerTable/PowerTableHeader'
+import PowerTableBody from './components/PowerTable/PowerTableBody'
+import PowerTableFooter from './components/PowerTable/PowerTableFooter'
+import PowerTableSearchBar from './components/PowerTable/PowerTableSearchBar'
+import PowerTableMoreFilters from './components/PowerTable/PowerTableMoreFilters'
 
 const App = () => {
   const [headerColumns, setHeaderColumns] = useState([])
