@@ -1,8 +1,5 @@
 import React from 'react'
 import '../styles/PowerTable.scss'
-import PowerTableHeader from './PowerTableHeader'
-import PowerTableBody from './PowerTableBody'
-import PowerTableFooter from './PowerTableFooter'
 import Spinner from './Spinner'
 
 //  Todo:
@@ -14,26 +11,21 @@ import Spinner from './Spinner'
 //   Bubble one event onclick of any column/row
 
 const PowerTable = ({
-  headerColumns = [],
-  tableData = [],
-  loading = false,
-  hasNext = false,
-  hasPrevious = false,
-  currentPage = 1,
-  totalPages = 1
+  topBar,
+  tableHeader,
+  tableBody,
+  tableFooter,
+  loading = false
 }) => {
   return (
     <div className="power-table">
-      <PowerTableHeader columns={headerColumns}/>
+      {topBar}
 
-      {loading ? <Spinner/> : <PowerTableBody tableData={tableData}/>}
+      {tableHeader}
 
-      <PowerTableFooter
-        hasNext={hasNext}
-        hasPrevious={hasPrevious}
-        currentPage={currentPage}
-        totalPages={totalPages}
-      />
+      {loading ? <Spinner/> : tableBody}
+
+      {tableFooter}
     </div>
   )
 }

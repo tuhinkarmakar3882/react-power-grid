@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import PowerTable from './components/PowerTable'
+import PowerTableFilter from './components/PowerTableFilter'
+import PowerTableHeader from './components/PowerTableHeader'
+import PowerTableBody from './components/PowerTableBody'
+import PowerTableFooter from './components/PowerTableFooter'
 
 const App = () => {
   const [headerColumns, setHeaderColumns] = useState([])
@@ -44,13 +48,20 @@ const App = () => {
   return (
     <section ref={powerTableContainer}>
       <PowerTable
-        headerColumns={headerColumns}
-        tableData={tableData}
-        hasNext={hasNext}
-        hasPrevious={hasPrevious}
         loading={false}
-        currentPage={1}
-        totalPages={1}
+        topBar={
+          <PowerTableFilter filters={undefined} moreFilters={undefined} searchBar={true}/>
+        }
+        tableHeader={<PowerTableHeader columns={headerColumns}/>}
+        tableBody={<PowerTableBody tableData={tableData}/>}
+        tableFooter={
+          <PowerTableFooter
+            hasNext={hasNext}
+            hasPrevious={hasPrevious}
+            currentPage={1}
+            totalPages={1}
+          />
+        }
       />
     </section>
   )
