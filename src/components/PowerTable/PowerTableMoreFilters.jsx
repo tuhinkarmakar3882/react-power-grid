@@ -19,5 +19,4 @@ const PowerTableMoreFilters = ({ children }) => {
     </section>
   )
 }
-
 export default PowerTableMoreFilters

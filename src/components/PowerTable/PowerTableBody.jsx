@@ -10,6 +10,7 @@ const PowerTableBody = ({ tableData = [] }) => {
 
   const renderRows = () => tableData.map((row, rowIdx) => (
     <section className="row" key={'row-' + rowIdx}>
+      <input type="checkbox" onClick={emmitCheckEvent}></input>
       {renderColumns(row, rowIdx)}
     </section>
   ))
