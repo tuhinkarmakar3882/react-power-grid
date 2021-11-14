@@ -3,9 +3,7 @@ import '../../styles/PowerTable.scss'
 import Spinner from '../Spinner'
 
 //  Todo:
-//   At the top add filters (Dropdown)
 //   At the top add moreFilters
-//   Add a Multiselect option
 //   Bubble one event onclick of any column/row
 
 const PowerTable = ({
