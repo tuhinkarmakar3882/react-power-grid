@@ -9,10 +9,22 @@ const PowerTableDropDown = ({ item }) => {
     ))
   }
 
+  const emitDropdownChangeEvent = ({ target }) => {
+    target.dispatchEvent(new CustomEvent('dropdown-change', {
+      bubbles: true,
+      detail: {
+        filter: {
+          name: item.name,
+          value: target.value
+        }
+      }
+    }))
+  }
+
   return (
     <label>
       {item.name}
-      <select name={item.name}>{renderOptions()}</select>
+      <select name={item.name} onChange={emitDropdownChangeEvent}>{renderOptions()}</select>
     </label>
   )
 }
