@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const PowerTableMoreFilters = ({ moreFilters }) => {
+const PowerTableMoreFilters = ({ children }) => {
+  const [isOpened, setIsOpened] = useState(false)
+
+  const toggleMoreFilters = () => setIsOpened(!isOpened)
+
+  const showMoreFilters = () => (
+    <aside>
+      {children}
+    </aside>
+  )
+
   return (
-    <button>
-      More Filter
-    </button>
+    <section className="power-table-more-filters">
+      <button onClick={toggleMoreFilters}>More Filter</button>
+
+      {isOpened && showMoreFilters()}
+    </section>
   )
 }
 
