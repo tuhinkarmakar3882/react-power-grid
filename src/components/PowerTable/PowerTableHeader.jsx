@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const PowerTableHeader = ({ columns = [] }) => {
-  const handleToggleAction = ({ target }) => {
+  const [checkboxState, setCheckboxState] = useState(false)
+
+  const handleEventEmission = ({ target }) => {
+    if (target.tagName === 'INPUT') {
+      return target.dispatchEvent(new CustomEvent('select-all-columns', {
+        bubbles: true,
+        detail: {
+          checkedState: target.checked
+        }
+      }))
+    }
+
     const columnName = target.getAttribute('data-column-name')
     const previousSortOrder = target.getAttribute('data-sort-order')
     let newSortOrder = 'DESC'
@@ -30,7 +41,15 @@ const PowerTableHeader = ({ columns = [] }) => {
   ))
 
   return (
-    <header className="row" onClick={handleToggleAction}>
+    <header className="row" onClick={handleEventEmission}>
+
+      <input
+        type="checkbox"
+        onChange={() => setCheckboxState(!checkboxState)}
+        value={checkboxState}
+        checked={checkboxState}
+      />
+
       {renderHeaderColumns()}
     </header>
   )
