@@ -7,6 +7,10 @@ const PowerTableMoreFilters = ({ children }) => {
 
   const showMoreFilters = () => (
     <aside>
+      <nav>
+        <p>More Filters</p>
+        <i onClick={toggleMoreFilters}>&times;</i>
+      </nav>
       {children}
     </aside>
   )

@@ -1,10 +1,6 @@
 import React from 'react'
-import '../../styles/PowerTable.scss'
+import '../../styles/PowerTable/index.scss'
 import Spinner from '../Spinner'
-
-//  Todo:
-//   At the top add moreFilters
-//   Bubble one event onclick of any column/row
 
 const PowerTable = ({
   topBar,
