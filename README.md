@@ -14,3 +14,9 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 
 ### How to use it?
 Documentation Coming soon :)
+
+### How to run from the source code?
+
+- Clone the repo
+- `npm run install` or `yarn install`
+- `npm run start` or `yarn start`
