@@ -70,7 +70,6 @@ const App = () => {
 
     setTableData(newTableData)
   }
-
   const handleAllRowSelection = (evt) => {
     logEventDetails(evt)
 
@@ -88,7 +87,6 @@ const App = () => {
     powerTableContainer.current.addEventListener('select-all-columns', handleAllRowSelection)
     powerTableContainer.current.addEventListener('dropdown-change', logEventDetails)
   }, [])
-
   useEffect(() => () => {
     powerTableContainer?.current?.removeEventListener('sort', logEventDetails)
     powerTableContainer?.current?.removeEventListener('pagination', logEventDetails)
