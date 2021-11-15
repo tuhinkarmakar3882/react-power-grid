@@ -6,6 +6,7 @@ import PowerTableBody from './components/PowerTable/PowerTableBody'
 import PowerTableFooter from './components/PowerTable/PowerTableFooter'
 import PowerTableSearchBar from './components/PowerTable/PowerTableSearchBar'
 import PowerTableMoreFilters from './components/PowerTable/PowerTableMoreFilters'
+import PowerTableDropDown from './components/PowerTable/PowerTableDropDown'
 
 const App = () => {
   const powerTableContainer = useRef(null)
@@ -106,7 +107,11 @@ const App = () => {
             filters={filter}
             moreFilters={
               <PowerTableMoreFilters>
-                <h1>Put your more filters</h1>
+                {filter.map((item) => (
+                  <li key={item.name}>
+                    {item?.custom || <PowerTableDropDown item={item}/>}
+                  </li>
+                ))}
               </PowerTableMoreFilters>
             }
             searchBar={<PowerTableSearchBar/>}

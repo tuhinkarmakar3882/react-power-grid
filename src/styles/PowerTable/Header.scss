@@ -1,0 +1,15 @@
+.power-{
+  header {
+    font-weight: var(--header-font-weight);
+    font-size: var(--header-font-size);
+    cursor: pointer;
+
+    .ASC {
+      color: red;
+    }
+
+    .DESC {
+      color: blue;
+    }
+  }
+}

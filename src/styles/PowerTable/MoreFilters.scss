@@ -1,0 +1,50 @@
+.power-table {
+  section.power-table-more-filters {
+    position: relative;
+    isolation: isolate;
+
+    aside {
+      position: fixed;
+      inset: 24%;
+      padding: 1rem;
+      z-index: 2;
+      overflow: auto;
+      background: hsla(0, 0%, 0%, 0.12);
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+      box-shadow: 4px 4px 4px hsla(0, 0%, 0%, 0.25), 0 0 4px 100vh hsla(0, 0%, 0%, 0.36);
+
+      nav {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background: gray;
+          bottom: 0;
+        }
+
+        p {
+          font-weight: 600;
+          font-size: 1.5rem;
+        }
+
+        i {
+          font-size: 2rem;
+          display: grid;
+          place-items: center;
+          min-height: 48px;
+          min-width: 48px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

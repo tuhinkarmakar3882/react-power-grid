@@ -1,0 +1,9 @@
+.power-table {
+  main {
+    margin: var(--table-body-margin);
+
+    .row {
+      margin: var(--table-row-gap);
+    }
+  }
+}

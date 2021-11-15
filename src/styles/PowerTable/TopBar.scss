@@ -1,0 +1,17 @@
+.power-table {
+  nav.power-table-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      select {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
