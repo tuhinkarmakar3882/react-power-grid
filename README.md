@@ -8,6 +8,8 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 
 See Demo at: https://react-power-table.netlify.app/
 
+Documentation: https://tuhinkarmakar3882.github.io/react-power-table/
+
 ### Features:
 
 - [x] Supports Event Delegation out of the box
