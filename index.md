@@ -6,10 +6,11 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-power-table/deploys)
 
-<a href="https://react-power-table.netlify.app/" target="_blank">Open Demo (Make sure to open the Console in the browser)</a>
+See Demo at: https://react-power-table.netlify.app/
 
+Documentation: https://tuhinkarmakar3882.github.io/react-power-table/
 
-### Features:
+## Features:
 
 - [x] Supports Event Delegation out of the box
 - [x] Has Modular Components
@@ -19,32 +20,34 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 - [x] Uses only raw HTML tags and no 3rd party dependency
 - [x] Configurable via attributes
 
-### How to run from the source code?
+## How to run from the source code?
 
 - Clone the repo
 - `npm run install` or `yarn install`
 - `npm run start` or `yarn start`
 
-### This library comes with the following
+---
 
-##### PreConfigured Layouts
+## This library comes with the following
+
+#### PreConfigured Layouts
 
 - `PowerTable.jsx`
 
-##### Table Sections
+#### Table Sections
 
 - `PowerTableTopBar.jsx`
 - `PowerTableHeader.jsx`
 - `PowerTableBody.jsx`
 - `PowerTableFooter.jsx`
 
-##### Utilities
+#### Utilities
 
 - `PowerTableSearchBar.jsx`
 - `PowerTableDropDown.jsx`
 - `PowerTableMoreFilters.jsx`
 
-##### PowerTable SCSS Styles
+#### PowerTable SCSS Styles
 
 - `Base.scss`
 - `Body.scss`
@@ -55,7 +58,9 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 
 > These are all partial stylesheets. You can import only the bits and pieces you need. However, if you want to use all preconfigured styles, feel free to import the `index.scss`
 
-##### Supported Events
+---
+
+## Supported Events
 
 - `search`
 - `sort`
@@ -64,11 +69,11 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 - `dropdown-change`
 - `select-all-columns`
 
-### Events in Details
+## Events in Details
 
 > All payloads are accessible via `event.detail`
 
-#### 1. The `search` Event
+### 1. The `search` Event
 
 Search event is fired whenever we put contents in the search field and hit enter. Here's the Payload:
 
@@ -78,7 +83,7 @@ Search event is fired whenever we put contents in the search field and hit enter
 }
 ```
 
-#### 2. The `sort` Event
+### 2. The `sort` Event
 
 This event is fired whenever the header column is clicked. Here's the Payload:
 
@@ -89,7 +94,7 @@ This event is fired whenever the header column is clicked. Here's the Payload:
 }
 ```
 
-#### 3. The `pagination` Event
+### 3. The `pagination` Event
 
 This event is fired whenever the user tries to move to a previous page or the next page. Here's the Payload:
 
@@ -100,7 +105,7 @@ This event is fired whenever the user tries to move to a previous page or the ne
 }
 ```
 
-#### 4. The `toggle-row-selection` Event
+### 4. The `toggle-row-selection` Event
 
 This is fired whenever a checkbox of a row is being selected. Here's the Payload:
 
@@ -110,7 +115,7 @@ This is fired whenever a checkbox of a row is being selected. Here's the Payload
 }
 ``` 
 
-#### 5. The `dropdown-change` Event
+### 5. The `dropdown-change` Event
 
 This is fired when the user tries to change the filters using the dropdown. Here's the Payload:
 
@@ -123,7 +128,7 @@ This is fired when the user tries to change the filters using the dropdown. Here
 }
 ``` 
 
-#### 6. The `select-all-columns` Event
+### 6. The `select-all-columns` Event
 
 This is fired whenever the user tries to select the checkbox in the header. Here's the Payload:
 
@@ -133,5 +138,8 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 }
 ``` 
 
-### How to use it?
+---
+
+## How to use it?
+
 
