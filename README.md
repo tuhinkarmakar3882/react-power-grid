@@ -140,4 +140,155 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 
 ## How to use it?
 
-Coming Soon :) 
+### 1. `<PowerTable/>`
+
+Sample Usage:
+
+```jsx
+<PowerTable
+  loading={Boolean}
+  topBar={ReactComponent}
+  tableHeader={ReactComponent}
+  tableBody={ReactComponent}
+  tableFooter={ReactComponent}
+/>
+ ```
+
+More Info on Props:
+
+```json
+{
+  "loading": "This is used to show/hide the spinner while fetching data from the server",
+  "topBar": "This is a React Component that is used to render the Top Navigation Bar",
+  "tableHeader": "This is a React Component that is used to render the Table Header",
+  "tableBody": "This is a React Component that is used to render the Table Body",
+  "tableFooter": "This is a React component that is used to render the Table footer under Table body"
+}
+```
+
+### 2. `<PowerTableTopBar/>`
+
+Sample Usage:
+
+```jsx
+<PowerTableTopBar
+   filters={JSON Array of Objects}
+   moreFilters={ReactComponent}
+   searchBar={ReactComponent}
+ />
+```
+
+More Info on Props:
+
+```json
+{
+  "filters": "This is a JSON Array Of Objects which is used to provide filters that can be applied on the PowerTable.",
+  "moreFilters": "This is a React component that renders a button when clicked provides more number of Filters",
+  "searchBar": "This is a React Component that renders the search text box."
+}
+```
+
+### 3. `<PowerTableHeader/>`
+
+Sample Usage:
+
+```jsx
+<PowerTableHeader columns={Array of Objects}/>
+```
+
+More Info on Props:
+
+```json
+{
+  "columns": "This is an array of Objects that consists of header columns"
+}
+```
+
+### 4. `PowerTableBody/>`
+
+Sample Usage:
+
+```jsx
+<PowerTableBody tableData={array of objects}
+```
+
+More Info on Props:
+
+```json
+{
+  "tableData": "This is a multidimensional array consisting the data that needs to be inserted in the table."
+}
+```
+
+### 5. `<PowerTableFooter/>`
+
+Sample Usage:
+
+```jsx
+<PowerTableFooter
+  hasNext={Boolean}
+  hasPrevious={Boolean}
+  currentPage={Number}
+  totalPages={Number}
+  />
+```
+
+More Info on Props:
+
+```json
+{
+  "hasNext": "This is used to enable/disable the next button in Footer. When False, next button is disabled. ",
+  "hasPrevious": "This is used to enable/disable the prev button in Footer. When False, prev button is disabled. ",
+  "currentPage": "This shows the current page number",
+  "totalPages": "this shows the total number of pages"
+}
+```
+
+### 6. `PowerTableMoreFilters/>`
+
+Sample Usage:
+
+```jsx
+<PowerTableMoreFilters>
+  {children}
+ </PowerTableMoreFilters>
+```
+
+More Info on Props:
+
+```json
+{
+  "children": "These are the child components that need to be rendered."
+}
+```
+
+### 7. `PowerTableSearchBar/>`
+
+Sample Usage:
+
+```jsx
+<PowerTableSearchBar/>
+```
+
+### 8. `<PowerTableDropdown/>`
+
+Sample Usage:
+
+```jsx
+<PowerTableDropdown>{item}<PowerTableDropDown/>
+
+```
+
+More Info on Props:
+
+```json
+{
+  "item": "Is used for mapping each option with the key."
+}
+```
+
+### Methods 
+
+- 
+
+
