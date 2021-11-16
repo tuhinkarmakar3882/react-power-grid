@@ -140,3 +140,4 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 
 ## How to use it?
 
+Coming Soon :) 
