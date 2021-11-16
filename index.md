@@ -6,9 +6,7 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-power-table/deploys)
 
-See Demo at: https://react-power-table.netlify.app/
-
-Documentation: https://tuhinkarmakar3882.github.io/react-power-table/
+<a href="https://react-power-table.netlify.app/" target="_blank"> View the demo </a>
 
 ## Features:
 
@@ -142,4 +140,5 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 
 ## How to use it?
 
+Coming Soon :)
 
