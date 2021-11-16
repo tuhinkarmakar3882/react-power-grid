@@ -1,4 +1,4 @@
-# React Power Table
+# React Render-less Power Table
 
 A highly customizable and render-less lightweight library to manage TABLE related actions.
 
@@ -172,10 +172,10 @@ Sample Usage:
 
 ```jsx
 <PowerTableTopBar
-   filters={JSON Array of Objects}
-   moreFilters={ReactComponent}
-   searchBar={ReactComponent}
- />
+  filters={JSON Array of Objects}
+  moreFilters={ReactComponent}
+  searchBar={ReactComponent}
+/>
 ```
 
 More Info on Props:
@@ -230,7 +230,7 @@ Sample Usage:
   hasPrevious={Boolean}
   currentPage={Number}
   totalPages={Number}
-  />
+/>
 ```
 
 More Info on Props:
@@ -251,7 +251,7 @@ Sample Usage:
 ```jsx
 <PowerTableMoreFilters>
   {children}
- </PowerTableMoreFilters>
+</PowerTableMoreFilters>
 ```
 
 More Info on Props:
@@ -296,6 +296,3 @@ More Info on Props:
 - renderOptions : A function that renders options of a dropdown
 - renderHeaderColumns : A function that renders header columns
 - showMoreFilters: A function that helps in toggling of moreFilters Button to open a modal.
-
-
-
