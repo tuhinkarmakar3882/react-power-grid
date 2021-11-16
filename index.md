@@ -1,37 +1,136 @@
-## Welcome to GitHub Pages
+# React Power Table
 
-You can use the [editor on GitHub](https://github.com/tuhinkarmakar3882/react-power-table/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A highly customizable and render-less lightweight library to manage TABLE related actions.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<a href="https://www.linkedin.com/in/tuhinkarmakar3882/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a>
 
-### Markdown
+[![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-power-table/deploys)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+See Demo at: https://react-power-table.netlify.app/
 
-```markdown
-Syntax highlighted code block
+### Features:
 
-# Header 1
-## Header 2
-### Header 3
+- [x] Supports Event Delegation out of the box
+- [x] Has Modular Components
+- [x] Bring your own CSS Styles
+- [x] Override most sensible defaults with CSS-variables
+- [x] Mix and Match the layout components to create your own unique version of a table
+- [x] Uses only raw HTML tags and no 3rd party dependency
+- [x] Configurable via attributes
 
-- Bulleted
-- List
+### How to run from the source code?
 
-1. Numbered
-2. List
+- Clone the repo
+- `npm run install` or `yarn install`
+- `npm run start` or `yarn start`
 
-**Bold** and _Italic_ and `Code` text
+### This library comes with the following
 
-[Link](url) and ![Image](src)
+##### PreConfigured Layouts
+
+- `PowerTable.jsx`
+
+##### Table Sections
+
+- `PowerTableTopBar.jsx`
+- `PowerTableHeader.jsx`
+- `PowerTableBody.jsx`
+- `PowerTableFooter.jsx`
+
+##### Utilities
+
+- `PowerTableSearchBar.jsx`
+- `PowerTableDropDown.jsx`
+- `PowerTableMoreFilters.jsx`
+
+##### PowerTable SCSS Styles
+
+- `Base.scss`
+- `Body.scss`
+- `Footer.scss`
+- `TopBar.scss`
+- `Header.scss`
+- `MoreFilters.scss`
+
+> These are all partial stylesheets. You can import only the bits and pieces you need. However, if you want to use all preconfigured styles, feel free to import the `index.scss`
+
+##### Supported Events
+
+- `search`
+- `sort`
+- `pagination`
+- `toggle-row-selection`
+- `dropdown-change`
+- `select-all-columns`
+
+### Events in Details
+
+> All payloads are accessible via `event.detail`
+
+#### 1. The `search` Event
+
+Search event is fired whenever we put contents in the search field and hit enter. Here's the Payload:
+
+```json
+{
+  "query": "String"
+}
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+#### 2. The `sort` Event
 
-### Jekyll Themes
+This event is fired whenever the header column is clicked. Here's the Payload:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/tuhinkarmakar3882/react-power-table/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```json
+{
+  "columnName": "String",
+  "sortOrder": "String (ASC | DESC)"
+}
+```
 
-### Support or Contact
+#### 3. The `pagination` Event
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+This event is fired whenever the user tries to move to a previous page or the next page. Here's the Payload:
+
+```json
+{
+  "currentPage": "Number",
+  "mode": "String ( Backward | Forward )"
+}
+```
+
+#### 4. The `toggle-row-selection` Event
+
+This is fired whenever a checkbox of a row is being selected. Here's the Payload:
+
+```json
+{
+  "rowIdx": "Number"
+}
+``` 
+
+#### 5. The `dropdown-change` Event
+
+This is fired when the user tries to change the filters using the dropdown. Here's the Payload:
+
+```json
+{
+  "filter": {
+    "name": "String",
+    "value": "FilterValue"
+  }
+}
+``` 
+
+#### 6. The `select-all-columns` Event
+
+This is fired whenever the user tries to select the checkbox in the header. Here's the Payload:
+
+```json
+{
+  "checkedState": "Boolean"
+}
+``` 
+
+### How to use it?
+
