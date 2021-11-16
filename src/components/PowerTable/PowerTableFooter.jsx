@@ -21,11 +21,11 @@ const PowerTableFooter = ({
 
   return (
     <footer onClick={handlePaginationEvent}>
-      <button disabled={!hasPrevious} data-action="backward">Previous</button>
+      <button disabled={!hasPrevious} data-action="Backward">Previous</button>
 
       <p>{currentPage} of {totalPages}</p>
 
-      <button disabled={!hasNext} data-action="forward">Next</button>
+      <button disabled={!hasNext} data-action="Forward">Next</button>
     </footer>
   )
 }

@@ -29,7 +29,8 @@ const PowerTableHeader = ({ columns = [] }) => {
     target.dispatchEvent(new CustomEvent('sort', {
       bubbles: true,
       detail: {
-        [columnName]: newSortOrder
+        columnName,
+        sortOrder: newSortOrder
       }
     }))
   }

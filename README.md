@@ -26,7 +26,7 @@ See Demo at: https://react-power-table.netlify.app/
 
 ### This library comes with the following
 
-##### PreBaked Layouts
+##### PreConfigured Layouts
 
 - `PowerTable.jsx`
 
@@ -43,18 +43,19 @@ See Demo at: https://react-power-table.netlify.app/
 - `PowerTableDropDown.jsx`
 - `PowerTableMoreFilters.jsx`
 
-##### SCSS Styles
+##### PowerTable SCSS Styles
 
-- `PowerTable styles`
-    - `Base.scss`
-    - `index.scss`
-    - `Body.scss`
-    - `Footer.scss`
-    - `TopBar.scss`
-    - `Header.scss`
-    - `MoreFilters.scss`
+- `Base.scss`
+- `Body.scss`
+- `Footer.scss`
+- `TopBar.scss`
+- `Header.scss`
+- `MoreFilters.scss`
+
+> These are all partial stylesheets. You can import only the bits and pieces you need. However, if you want to use all preconfigured styles, feel free to import the `index.scss`
 
 ##### Supported Events
+
 - `search`
 - `sort`
 - `pagination`
@@ -62,24 +63,74 @@ See Demo at: https://react-power-table.netlify.app/
 - `dropdown-change`
 - `select-all-columns`
 
-###### search 
-- Search event is called when we try to search a text in the table. It's called when user types a text in text input and hits enter.
+### Events in Details
 
-##### sort
-- sort event handler is called whenever the header column is clicked.
+> All payloads are accessible via `event.detail`
 
-##### pagination
-- pagination event handler is called whenever the user tries to move to a previous page or the next page.
+#### 1. The `search` Event
 
-##### toggle-row-selection
-- toggle-row-selection is called whenever a row is selected.
+Search event is fired whenever we put contents in the search field and hit enter. Here's the Payload:
 
-##### dropdown-change
-- dropdown-change is called whenever the user try to change the filters using the dropdown.
+```json
+{
+  "query": "String"
+}
+```
 
-##### select-all-columns
-- select-all-columns is called whenever the user tries to select the checkbox in the header.
+#### 2. The `sort` Event
 
+This event is fired whenever the header column is clicked. Here's the Payload:
+
+```json
+{
+  "columnName": "String",
+  "sortOrder": "String (ASC | DESC)"
+}
+```
+
+#### 3. The `pagination` Event
+
+This event is fired whenever the user tries to move to a previous page or the next page. Here's the Payload:
+
+```json
+{
+  "currentPage": "Number",
+  "mode": "String ( Backward | Forward )"
+}
+```
+
+#### 4. The `toggle-row-selection` Event
+
+This is fired whenever a checkbox of a row is being selected. Here's the Payload:
+
+```json
+{
+  "rowIdx": "Number"
+}
+``` 
+
+#### 5. The `dropdown-change` Event
+
+This is fired when the user tries to change the filters using the dropdown. Here's the Payload:
+
+```json
+{
+  "filter": {
+    "name": "String",
+    "value": "FilterValue"
+  }
+}
+``` 
+
+#### 6. The `select-all-columns` Event
+
+This is fired whenever the user tries to select the checkbox in the header. Here's the Payload:
+
+```json
+{
+  "checkedState": "Boolean"
+}
+``` 
 
 ### How to use it?
 
