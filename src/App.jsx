@@ -128,6 +128,15 @@ const App = () => {
           />
         }
       />
+
+      <footer>
+        <small>[Note : Make sure to open your console to see the events popping up]
+          <br/>
+          <a href="https://tuhinkarmakar3882.github.io/react-power-table/" target="_blank" rel="noreferrer">
+            Read the Documentation
+          </a>
+        </small>
+      </footer>
     </section>
   )
 }
