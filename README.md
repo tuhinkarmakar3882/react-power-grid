@@ -140,7 +140,7 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 
 ## How to use it?
 
-### 1. `<PowerTable/>`
+### 1. &lt;PowerTable/&gt;
 
 Sample Usage:
 
@@ -166,16 +166,16 @@ More Info on Props:
 }
 ```
 
-### 2. `<PowerTableTopBar/>`
+### 2. &lt;PowerTableTopBar/&gt;
 
 Sample Usage:
 
 ```jsx
 <PowerTableTopBar
-   filters={JSON Array of Objects}
-   moreFilters={ReactComponent}
-   searchBar={ReactComponent}
- />
+  filters={JSON Array of Objects}
+  moreFilters={ReactComponent}
+  searchBar={ReactComponent}
+/>
 ```
 
 More Info on Props:
@@ -188,7 +188,7 @@ More Info on Props:
 }
 ```
 
-### 3. `<PowerTableHeader/>`
+### 3. &lt;PowerTableHeader/&gt;
 
 Sample Usage:
 
@@ -204,7 +204,7 @@ More Info on Props:
 }
 ```
 
-### 4. `PowerTableBody/>`
+### 4. &lt;PowerTableBody/&gt;
 
 Sample Usage:
 
@@ -220,7 +220,7 @@ More Info on Props:
 }
 ```
 
-### 5. `<PowerTableFooter/>`
+### 5. &lt;PowerTableFooter/&gt;
 
 Sample Usage:
 
@@ -230,7 +230,7 @@ Sample Usage:
   hasPrevious={Boolean}
   currentPage={Number}
   totalPages={Number}
-  />
+/>
 ```
 
 More Info on Props:
@@ -244,14 +244,14 @@ More Info on Props:
 }
 ```
 
-### 6. `PowerTableMoreFilters/>`
+### 6. &lt;PowerTableMoreFilters/&gt;
 
 Sample Usage:
 
 ```jsx
 <PowerTableMoreFilters>
   {children}
- </PowerTableMoreFilters>
+</PowerTableMoreFilters>
 ```
 
 More Info on Props:
@@ -262,7 +262,7 @@ More Info on Props:
 }
 ```
 
-### 7. `PowerTableSearchBar/>`
+### 7. &lt;PowerTableSearchBar/&gt;
 
 Sample Usage:
 
@@ -270,7 +270,7 @@ Sample Usage:
 <PowerTableSearchBar/>
 ```
 
-### 8. `<PowerTableDropdown/>`
+### 8. &lt;PowerTableDropdown/&gt;
 
 Sample Usage:
 
@@ -296,6 +296,3 @@ More Info on Props:
 - renderOptions : A function that renders options of a dropdown
 - renderHeaderColumns : A function that renders header columns
 - showMoreFilters: A function that helps in toggling of moreFilters Button to open a modal.
-
-
-
