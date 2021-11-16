@@ -1,4 +1,4 @@
-# React Power Table
+# React Render-less Power Table
 
 A highly customizable and render-less lightweight library to manage TABLE related actions.
 
