@@ -287,8 +287,15 @@ More Info on Props:
 }
 ```
 
-### Methods 
+### Methods
 
-- 
+- renderRows: A function that renders rows
+- renderColumns : A function that renders data into columns
+- renderColumnItem: A function that renders each item of a column.
+- renderCheckBox: A function that renders a checkbox
+- renderOptions : A function that renders options of a dropdown
+- renderHeaderColumns : A function that renders header columns
+- showMoreFilters: A function that helps in toggling of moreFilters Button to open a modal.
+
 
 
