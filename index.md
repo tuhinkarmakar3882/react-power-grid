@@ -6,7 +6,8 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-power-table/deploys)
 
-See Demo at: https://react-power-table.netlify.app/
+<a href="https://react-power-table.netlify.app/" target="_blank">Open Demo (Make sure to open the Console in the browser)</a>
+
 
 ### Features:
 
