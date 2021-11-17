@@ -1,5 +1,6 @@
 import React from 'react'
 import Spinner from '../Spinner'
+import PropTypes from 'prop-types'
 
 const PowerGrid = ({
   topBar,
@@ -20,6 +21,10 @@ const PowerGrid = ({
       {tableFooter}
     </div>
   )
+}
+
+PowerGrid.propTypes = {
+  loading: PropTypes.bool
 }
 
 export default PowerGrid
