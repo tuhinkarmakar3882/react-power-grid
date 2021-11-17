@@ -1,12 +1,14 @@
 {
   "name": "react-power-grid",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "keywords": [
     "react data table",
     "table library",
     "react renderless table",
     "react table",
-    "react power grid"
+    "react power grid",
+    "react-power-table",
+    "react-renderless-power-table"
   ],
   "main": "dist/index.js",
   "dependencies": {
