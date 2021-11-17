@@ -1,6 +1,6 @@
 {
   "name": "react-power-grid",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": [
     "react data table",
     "table library",
@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-npm-package": "babel src/lib --out-dir dist --copy-files --presets minify"
+    "build-npm-package": "babel src/lib --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": [
