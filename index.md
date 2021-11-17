@@ -1,6 +1,6 @@
 # React Power Grid
 
-A highly customizable and render-less lightweight library to manage TABLE related actions.
+A highly customizable and render-less lightweight library to manage Grid related actions.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-power-grid/deploys)
 
@@ -19,9 +19,15 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 - ✅ Has Modular Components
 - ✅ Bring your own CSS Styles
 - ✅ Override most sensible defaults with CSS-variables
-- ✅ Mix and Match the layout components to create your own unique version of a table
+- ✅ Mix and Match the layout components to create your own unique version of a Grid
 - ✅ Uses only raw HTML tags and no 3rd party dependency
 - ✅ Configurable via attributes
+
+## Dependencies
+
+This package uses the `"sass": "^1.43.4"`
+
+> Therefore, Please ensure that your `react` project has `sass` installed or you can install it with `npm install --save-dev sass` or `yarn add --dev sass`
 
 ## How to run from the source code?
 
@@ -35,22 +41,22 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 
 #### PreConfigured Layouts
 
-- `PowerTable.jsx`
+- `PowerGrid.jsx`
 
-#### Table Sections
+#### Grid Sections
 
-- `PowerTableTopBar.jsx`
-- `PowerTableHeader.jsx`
-- `PowerTableBody.jsx`
-- `PowerTableFooter.jsx`
+- `PowerGridTopBar.jsx`
+- `PowerGridHeader.jsx`
+- `PowerGridBody.jsx`
+- `PowerGridFooter.jsx`
 
 #### Utilities
 
-- `PowerTableSearchBar.jsx`
-- `PowerTableDropDown.jsx`
-- `PowerTableMoreFilters.jsx`
+- `PowerGridSearchBar.jsx`
+- `PowerGridDropDown.jsx`
+- `PowerGridMoreFilters.jsx`
 
-#### PowerTable SCSS Styles
+#### PowerGrid SCSS Styles
 
 - `Base.scss`
 - `Body.scss`
@@ -145,17 +151,17 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 
 ## How to use it?
 
-### 1. &lt;PowerTable/&gt;
+### 1. &lt;PowerGrid/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTable
+<PowerGrid
   loading={Boolean}
   topBar={ReactComponent}
-  tableHeader={ReactComponent}
-  tableBody={ReactComponent}
-  tableFooter={ReactComponent}
+  GridHeader={ReactComponent}
+  GridBody={ReactComponent}
+  GridFooter={ReactComponent}
 />
  ```
 
@@ -165,18 +171,18 @@ More Info on Props:
 {
   "loading": "This is used to show/hide the spinner while fetching data from the server",
   "topBar": "This is a React Component that is used to render the Top Navigation Bar",
-  "tableHeader": "This is a React Component that is used to render the Table Header",
-  "tableBody": "This is a React Component that is used to render the Table Body",
-  "tableFooter": "This is a React component that is used to render the Table footer under Table body"
+  "GridHeader": "This is a React Component that is used to render the Grid Header",
+  "GridBody": "This is a React Component that is used to render the Grid Body",
+  "GridFooter": "This is a React component that is used to render the Grid footer under Grid body"
 }
 ```
 
-### 2. &lt;PowerTableTopBar/&gt;
+### 2. &lt;PowerGridTopBar/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTableTopBar
+<PowerGridTopBar
   filters={JSON Array of Objects}
   moreFilters={ReactComponent}
   searchBar={ReactComponent}
@@ -187,18 +193,18 @@ More Info on Props:
 
 ```json
 {
-  "filters": "This is a JSON Array Of Objects which is used to provide filters that can be applied on the PowerTable.",
+  "filters": "This is a JSON Array Of Objects which is used to provide filters that can be applied on the PowerGrid.",
   "moreFilters": "This is a React component that renders a button when clicked provides more number of Filters",
   "searchBar": "This is a React Component that renders the search text box."
 }
 ```
 
-### 3. &lt;PowerTableHeader/&gt;
+### 3. &lt;PowerGridHeader/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTableHeader columns={Array of Objects}/>
+<PowerGridHeader columns={Array of Objects}/>
 ```
 
 More Info on Props:
@@ -209,28 +215,28 @@ More Info on Props:
 }
 ```
 
-### 4. &lt;PowerTableBody/&gt;
+### 4. &lt;PowerGridBody/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTableBody tableData={array of objects}
+<PowerGridBody GridData={array of objects}
 ```
 
 More Info on Props:
 
 ```json
 {
-  "tableData": "This is a multidimensional array consisting the data that needs to be inserted in the table."
+  "GridData": "This is a multidimensional array consisting the data that needs to be inserted in the Grid."
 }
 ```
 
-### 5. &lt;PowerTableFooter/&gt;
+### 5. &lt;PowerGridFooter/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTableFooter
+<PowerGridFooter
   hasNext={Boolean}
   hasPrevious={Boolean}
   currentPage={Number}
@@ -249,14 +255,14 @@ More Info on Props:
 }
 ```
 
-### 6. &lt;PowerTableMoreFilters/&gt;
+### 6. &lt;PowerGridMoreFilters/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTableMoreFilters>
+<PowerGridMoreFilters>
   {children}
-</PowerTableMoreFilters>
+</PowerGridMoreFilters>
 ```
 
 More Info on Props:
@@ -267,20 +273,20 @@ More Info on Props:
 }
 ```
 
-### 7. &lt;PowerTableSearchBar/&gt;
+### 7. &lt;PowerGridSearchBar/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTableSearchBar/>
+<PowerGridSearchBar/>
 ```
 
-### 8. &lt;PowerTableDropdown/&gt;
+### 8. &lt;PowerGridDropdown/&gt;
 
 Sample Usage:
 
 ```jsx
-<PowerTableDropdown>{item}<PowerTableDropDown/>
+<PowerGridDropdown>{item}<PowerGridDropDown/>
 
 ```
 
