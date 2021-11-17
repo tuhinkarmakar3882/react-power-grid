@@ -1,6 +1,13 @@
 {
   "name": "react-power-grid",
   "version": "0.1.0",
+  "keywords": [
+    "react data table",
+    "table library",
+    "react renderless table",
+    "react table",
+    "react power grid"
+  ],
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
