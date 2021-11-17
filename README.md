@@ -287,18 +287,3 @@ More Info on Props:
   "item": "Is used for mapping each option with the key."
 }
 ```
-
-<<<<<<< HEAD
-
-
-=======
-### Methods
-
-- renderRows: A function that renders rows
-- renderColumns : A function that renders data into columns
-- renderColumnItem: A function that renders each item of a column.
-- renderCheckBox: A function that renders a checkbox
-- renderOptions : A function that renders options of a dropdown
-- renderHeaderColumns : A function that renders header columns
-- showMoreFilters: A function that helps in toggling of moreFilters Button to open a modal.
->>>>>>> edfcca8849e323d16210621c60e4bd98f8fff5ed
