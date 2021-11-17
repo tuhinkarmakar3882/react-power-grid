@@ -4,6 +4,10 @@ A highly customizable and render-less lightweight library to manage Grid related
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-power-grid/deploys)
 
+[![Npm package version](https://badgen.net/npm/v/react-power-grid)](https://npmjs.com/package/react-power-grid)
+[![Npm package total downloads](https://badgen.net/npm/dt/react-power-grid)](https://npmjs.com/package/react-power-grid)
+
+
 <a href="https://react-power-grid.netlify.app/" target="_blank"> View the demo </a> or <a href="https://tuhinkarmakar3882.github.io/react-power-grid/" target="_blank"> Read the Docs </a>
 
 ## Contributors:
