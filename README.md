@@ -2,16 +2,16 @@
 
 A highly customizable and render-less lightweight library to manage TABLE related actions.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-renderless-power-table/deploys)
+
+<a href="https://react-renderless-power-table.netlify.app/" target="_blank"> View the demo </a> or <a href="https://tuhinkarmakar3882.github.io/react-renderless-power-table/" target="_blank"> Read the Docs </a>
+
 ## Contributors:
 
 | Name                  | Connect via |
 | ------                | ------         | 
 | Tuhin Karmakar  | <a href="https://www.linkedin.com/in/tuhinkarmakar3882/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a> |
 | Manogna Tata    | <a href="https://www.linkedin.com/in/manogna-tata/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a>      |
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-renderless-power-table/deploys)
-
-<a href="https://react-renderless-power-table.netlify.app/" target="_blank"> View the demo </a> or <a href="https://tuhinkarmakar3882.github.io/react-renderless-power-table/" target="_blank"> Read the Docs </a>
 
 ## Features:
 
