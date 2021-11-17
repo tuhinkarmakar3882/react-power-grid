@@ -23,6 +23,12 @@ A highly customizable and render-less lightweight library to manage TABLE relate
 - ✅ Uses only raw HTML tags and no 3rd party dependency
 - ✅ Configurable via attributes
 
+## Dependencies
+
+This package uses the `"sass": "^1.43.4"`
+
+> Therefore, Please ensure that your `react` project has `sass` installed or you can install it with `npm install --save-dev sass` or `yarn add --dev sass`
+
 ## How to run from the source code?
 
 - Clone the repo
