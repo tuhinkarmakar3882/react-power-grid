@@ -2,7 +2,12 @@
 
 A highly customizable and render-less lightweight library to manage TABLE related actions.
 
-<a href="https://www.linkedin.com/in/tuhinkarmakar3882/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a>
+## Contributors:
+
+| Name                  | Connect via |
+| ------                | ------         | 
+| Tuhin Karmakar  | <a href="https://www.linkedin.com/in/tuhinkarmakar3882/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a> |
+| Manogna Tata    | <a href="https://www.linkedin.com/in/manogna-tata/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a>      |
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-renderless-power-table/deploys)
 
@@ -286,13 +291,3 @@ More Info on Props:
   "item": "Is used for mapping each option with the key."
 }
 ```
-
-### Methods
-
-- renderRows: A function that renders rows
-- renderColumns : A function that renders data into columns
-- renderColumnItem: A function that renders each item of a column.
-- renderCheckBox: A function that renders a checkbox
-- renderOptions : A function that renders options of a dropdown
-- renderHeaderColumns : A function that renders header columns
-- showMoreFilters: A function that helps in toggling of moreFilters Button to open a modal.
