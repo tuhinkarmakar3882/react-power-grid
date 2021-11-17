@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../styles/PowerTable/index.scss'
 import Spinner from '../Spinner'
 
 const PowerTable = ({
@@ -7,7 +6,8 @@ const PowerTable = ({
   tableHeader,
   tableBody,
   tableFooter,
-  loading = false
+  loading = false,
+  loadingComponent = Spinner
 }) => {
   return (
     <div className="power-table">
@@ -15,7 +15,7 @@ const PowerTable = ({
 
       {tableHeader}
 
-      {loading ? <Spinner/> : tableBody}
+      {loading ? loadingComponent : tableBody}
 
       {tableFooter}
     </div>

@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
-import PowerTable from './components/PowerTable'
-import PowerTableTopBar from './components/PowerTable/PowerTableTopBar'
-import PowerTableHeader from './components/PowerTable/PowerTableHeader'
-import PowerTableBody from './components/PowerTable/PowerTableBody'
-import PowerTableFooter from './components/PowerTable/PowerTableFooter'
-import PowerTableSearchBar from './components/PowerTable/PowerTableSearchBar'
-import PowerTableMoreFilters from './components/PowerTable/PowerTableMoreFilters'
-import PowerTableDropDown from './components/PowerTable/PowerTableDropDown'
+import PowerTable from './lib/components/PowerTable'
+import PowerTableTopBar from './lib/components/PowerTable/PowerTableTopBar'
+import PowerTableHeader from './lib/components/PowerTable/PowerTableHeader'
+import PowerTableBody from './lib/components/PowerTable/PowerTableBody'
+import PowerTableFooter from './lib/components/PowerTable/PowerTableFooter'
+import PowerTableSearchBar from './lib/components/PowerTable/PowerTableSearchBar'
+import PowerTableMoreFilters from './lib/components/PowerTable/PowerTableMoreFilters'
+import PowerTableDropDown from './lib/components/PowerTable/PowerTableDropDown'
+import './lib/styles/PowerTable/index.scss'
 
 const App = () => {
   const powerTableContainer = useRef(null)
