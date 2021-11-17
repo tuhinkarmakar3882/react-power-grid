@@ -53,7 +53,7 @@ This package uses the `"sass": "^1.43.4"`
 #### Utilities
 
 - `PowerGridSearchBar.jsx`
-- `PowerGridDropDown.jsx`
+- `PowerGridDropdown.jsx`
 - `PowerGridMoreFilters.jsx`
 
 #### PowerGrid SCSS Styles
@@ -286,7 +286,7 @@ Sample Usage:
 Sample Usage:
 
 ```jsx
-<PowerGridDropdown>{item}<PowerGridDropDown/>
+<PowerGridDropdown>{item}<PowerGridDropdown/>
 
 ```
 

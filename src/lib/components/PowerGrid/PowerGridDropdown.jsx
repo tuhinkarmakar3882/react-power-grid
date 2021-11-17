@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PowerTableDropDown = ({ item }) => {
+const PowerGridDropdown = ({ item }) => {
   const renderOptions = () => {
     return item.options.map((option, idx) => (
       <option key={idx} value={option}>
@@ -29,4 +29,4 @@ const PowerTableDropDown = ({ item }) => {
   )
 }
 
-export default PowerTableDropDown
+export default PowerGridDropdown

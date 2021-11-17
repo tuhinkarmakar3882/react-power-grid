@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
-import PowerTable from './lib/components/PowerTable'
-import PowerTableTopBar from './lib/components/PowerTable/PowerTableTopBar'
-import PowerTableHeader from './lib/components/PowerTable/PowerTableHeader'
-import PowerTableBody from './lib/components/PowerTable/PowerTableBody'
-import PowerTableFooter from './lib/components/PowerTable/PowerTableFooter'
-import PowerTableSearchBar from './lib/components/PowerTable/PowerTableSearchBar'
-import PowerTableMoreFilters from './lib/components/PowerTable/PowerTableMoreFilters'
-import PowerTableDropDown from './lib/components/PowerTable/PowerTableDropDown'
-import './lib/styles/PowerTable/index.scss'
+import PowerGrid from './lib/components/PowerGrid'
+import PowerGridTopBar from './lib/components/PowerGrid/PowerGridTopBar'
+import PowerGridHeader from './lib/components/PowerGrid/PowerGridHeader'
+import PowerGridBody from './lib/components/PowerGrid/PowerGridBody'
+import PowerGridFooter from './lib/components/PowerGrid/PowerGridFooter'
+import PowerGridSearchBar from './lib/components/PowerGrid/PowerGridSearchBar'
+import PowerGridMoreFilters from './lib/components/PowerGrid/PowerGridMoreFilters'
+import PowerGridDropdown from './lib/components/PowerGrid/PowerGridDropdown'
+import './lib/styles/PowerGrid/index.scss'
 
 const App = () => {
   const powerTableContainer = useRef(null)
@@ -99,29 +99,29 @@ const App = () => {
 
   return (
     <section ref={powerTableContainer}>
-      <PowerTable
+      <PowerGrid
         loading={false}
         topBar={
-          <PowerTableTopBar
+          <PowerGridTopBar
             filters={filter}
             moreFilters={
-              <PowerTableMoreFilters>
+              <PowerGridMoreFilters>
                 {filter.map((item) => (
                   <li key={item.name}>
-                    {item?.custom || <PowerTableDropDown item={item}/>}
+                    {item?.custom || <PowerGridDropdown item={item}/>}
                   </li>
                 ))}
-              </PowerTableMoreFilters>
+              </PowerGridMoreFilters>
             }
-            searchBar={<PowerTableSearchBar/>}
+            searchBar={<PowerGridSearchBar/>}
           />
         }
-        tableHeader={<PowerTableHeader columns={headerColumns}/>}
+        tableHeader={<PowerGridHeader columns={headerColumns}/>}
         tableBody={
-          <PowerTableBody tableData={tableData}/>
+          <PowerGridBody tableData={tableData}/>
         }
         tableFooter={
-          <PowerTableFooter
+          <PowerGridFooter
             hasNext={hasNext}
             hasPrevious={hasPrevious}
             currentPage={1}

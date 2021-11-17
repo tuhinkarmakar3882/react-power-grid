@@ -1,19 +1,19 @@
-import PowerTable from './components/PowerTable'
-import PowerTableBody from './components/PowerTable/PowerTableBody'
-import PowerTableDropDown from './components/PowerTable/PowerTableDropDown'
-import PowerTableFooter from './components/PowerTable/PowerTableFooter'
-import PowerTableHeader from './components/PowerTable/PowerTableHeader'
-import PowerTableMoreFilters from './components/PowerTable/PowerTableMoreFilters'
-import PowerTableSearchBar from './components/PowerTable/PowerTableSearchBar'
+import PowerGrid from './components/PowerGrid'
+import PowerGridBody from './components/PowerGrid/PowerGridBody'
+import PowerGridDropdown from './components/PowerGrid/PowerGridDropdown'
+import PowerGridFooter from './components/PowerGrid/PowerGridFooter'
+import PowerGridHeader from './components/PowerGrid/PowerGridHeader'
+import PowerGridMoreFilters from './components/PowerGrid/PowerGridMoreFilters'
+import PowerGridSearchBar from './components/PowerGrid/PowerGridSearchBar'
 import Spinner from './components/Spinner'
 
 export {
-  PowerTable,
-  PowerTableBody,
-  PowerTableDropDown,
-  PowerTableFooter,
-  PowerTableHeader,
-  PowerTableMoreFilters,
-  PowerTableSearchBar,
+  PowerGrid,
+  PowerGridBody,
+  PowerGridDropdown,
+  PowerGridFooter,
+  PowerGridHeader,
+  PowerGridMoreFilters,
+  PowerGridSearchBar,
   Spinner
 }

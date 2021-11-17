@@ -1,7 +1,7 @@
 import React from 'react'
 import Spinner from '../Spinner'
 
-const PowerTable = ({
+const PowerGrid = ({
   topBar,
   tableHeader,
   tableBody,
@@ -10,7 +10,7 @@ const PowerTable = ({
   loadingComponent = Spinner
 }) => {
   return (
-    <div className="power-table">
+    <div className="power-grid">
       {topBar}
 
       {tableHeader}
@@ -22,4 +22,4 @@ const PowerTable = ({
   )
 }
 
-export default PowerTable
+export default PowerGrid

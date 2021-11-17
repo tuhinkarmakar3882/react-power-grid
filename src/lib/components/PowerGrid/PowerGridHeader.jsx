@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const PowerTableHeader = ({ columns = [] }) => {
+const PowerGridHeader = ({ columns = [] }) => {
   const [checkboxState, setCheckboxState] = useState(false)
 
   const handleEventEmission = ({ target }) => {
@@ -56,4 +56,4 @@ const PowerTableHeader = ({ columns = [] }) => {
   )
 }
 
-export default PowerTableHeader
+export default PowerGridHeader

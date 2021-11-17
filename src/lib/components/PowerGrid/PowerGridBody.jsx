@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PowerTableBody = ({ tableData = [] }) => {
+const PowerGridBody = ({ tableData = [] }) => {
   const emitOnChangeEvent = ({ target }, rowIdx) => {
     target.dispatchEvent(new CustomEvent('toggle-row-selection', {
       bubbles: true,
@@ -45,4 +45,4 @@ const PowerTableBody = ({ tableData = [] }) => {
   )
 }
 
-export default PowerTableBody
+export default PowerGridBody

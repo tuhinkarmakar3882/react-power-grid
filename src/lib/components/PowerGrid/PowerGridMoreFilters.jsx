@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const PowerTableMoreFilters = ({ children }) => {
+const PowerGridMoreFilters = ({ children }) => {
   const [isOpened, setIsOpened] = useState(false)
 
   const toggleMoreFilters = () => setIsOpened(!isOpened)
@@ -16,7 +16,7 @@ const PowerTableMoreFilters = ({ children }) => {
   )
 
   return (
-    <section className="power-table-more-filters">
+    <section className="power-grid-more-filters">
       <button onClick={toggleMoreFilters}>More Filter</button>
 
       {isOpened && showMoreFilters()}
@@ -24,4 +24,4 @@ const PowerTableMoreFilters = ({ children }) => {
   )
 }
 
-export default PowerTableMoreFilters
+export default PowerGridMoreFilters

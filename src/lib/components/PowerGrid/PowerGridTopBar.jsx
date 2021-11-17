@@ -1,17 +1,17 @@
 import React from 'react'
-import PowerTableDropDown from './PowerTableDropDown'
+import PowerGridDropdown from './PowerGridDropdown'
 
-const PowerTableTopBar = ({ filters, moreFilters, searchBar }) => {
+const PowerGridTopBar = ({ filters, moreFilters, searchBar }) => {
   const renderFilters = () => {
     return filters.map((item) => (
       <li key={item.name}>
-        {item?.custom || <PowerTableDropDown item={item} />}
+        {item?.custom || <PowerGridDropdown item={item} />}
       </li>
     ))
   }
 
   return (
-    <nav className="power-table-filter">
+    <nav className="power-grid-filter">
       <ul className="left-filters">{renderFilters()}</ul>
 
       <ul className="right-filters">
@@ -23,4 +23,4 @@ const PowerTableTopBar = ({ filters, moreFilters, searchBar }) => {
   )
 }
 
-export default PowerTableTopBar
+export default PowerGridTopBar

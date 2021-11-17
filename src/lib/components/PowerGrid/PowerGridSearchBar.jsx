@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PowerTableSearchBar = () => {
+const PowerGridSearchBar = () => {
   const emitSearchEvent = ({ keyCode, target }) => {
     if (keyCode !== 13) return
 
@@ -17,4 +17,4 @@ const PowerTableSearchBar = () => {
   )
 }
 
-export default PowerTableSearchBar
+export default PowerGridSearchBar

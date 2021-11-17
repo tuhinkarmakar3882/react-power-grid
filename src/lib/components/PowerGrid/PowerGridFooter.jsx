@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PowerTableFooter = ({
+const PowerGridFooter = ({
   hasNext = false,
   hasPrevious = false,
   currentPage = 1,
@@ -30,4 +30,4 @@ const PowerTableFooter = ({
   )
 }
 
-export default PowerTableFooter
+export default PowerGridFooter
