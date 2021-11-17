@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/Spinner.scss'
+import styles from '../styles/Spinner.module.scss'
 
 const Spinner = () => (<section className={styles.loader}/>)
 

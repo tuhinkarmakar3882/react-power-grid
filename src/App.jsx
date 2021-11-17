@@ -8,6 +8,7 @@ import PowerGridSearchBar from './lib/components/PowerGrid/PowerGridSearchBar'
 import PowerGridMoreFilters from './lib/components/PowerGrid/PowerGridMoreFilters'
 import PowerGridDropdown from './lib/components/PowerGrid/PowerGridDropdown'
 import './lib/styles/PowerGrid/index.scss'
+import './lib/styles/Spinner.module.scss'
 
 const App = () => {
   const powerTableContainer = useRef(null)

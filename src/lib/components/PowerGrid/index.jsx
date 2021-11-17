@@ -7,7 +7,7 @@ const PowerGrid = ({
   tableBody,
   tableFooter,
   loading = false,
-  loadingComponent = Spinner
+  loadingComponent = <Spinner/>
 }) => {
   return (
     <div className="power-grid">
