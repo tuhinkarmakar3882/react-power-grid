@@ -1,13 +1,13 @@
-# React Power Table
+# React Render-less Power Table
 
 A highly customizable and render-less lightweight library to manage TABLE related actions.
 
 <a href="https://www.linkedin.com/in/tuhinkarmakar3882/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a>
 <a href="https://www.linkedin.com/in/manogna-tata/" target="_blank">![image](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) </a>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-power-table/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/27a688b2-6479-45e2-81fd-171f52b6e5c7/deploy-status)](https://app.netlify.com/sites/react-renderless-power-table/deploys)
 
-<a href="https://react-power-table.netlify.app/" target="_blank"> View the demo </a> or <a href="https://tuhinkarmakar3882.github.io/react-power-table/" target="_blank"> Read the Docs </a>
+<a href="https://react-renderless-power-table.netlify.app/" target="_blank"> View the demo </a> or <a href="https://tuhinkarmakar3882.github.io/react-renderless-power-table/" target="_blank"> Read the Docs </a>
 
 ## Features:
 
@@ -141,7 +141,7 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 
 ## How to use it?
 
-### 1. `<PowerTable/>`
+### 1. &lt;PowerTable/&gt;
 
 Sample Usage:
 
@@ -167,16 +167,16 @@ More Info on Props:
 }
 ```
 
-### 2. `<PowerTableTopBar/>`
+### 2. &lt;PowerTableTopBar/&gt;
 
 Sample Usage:
 
 ```jsx
 <PowerTableTopBar
-   filters={JSON Array of Objects}
-   moreFilters={ReactComponent}
-   searchBar={ReactComponent}
- />
+  filters={JSON Array of Objects}
+  moreFilters={ReactComponent}
+  searchBar={ReactComponent}
+/>
 ```
 
 More Info on Props:
@@ -189,7 +189,7 @@ More Info on Props:
 }
 ```
 
-### 3. `<PowerTableHeader/>`
+### 3. &lt;PowerTableHeader/&gt;
 
 Sample Usage:
 
@@ -205,7 +205,7 @@ More Info on Props:
 }
 ```
 
-### 4. `PowerTableBody/>`
+### 4. &lt;PowerTableBody/&gt;
 
 Sample Usage:
 
@@ -221,7 +221,7 @@ More Info on Props:
 }
 ```
 
-### 5. `<PowerTableFooter/>`
+### 5. &lt;PowerTableFooter/&gt;
 
 Sample Usage:
 
@@ -231,7 +231,7 @@ Sample Usage:
   hasPrevious={Boolean}
   currentPage={Number}
   totalPages={Number}
-  />
+/>
 ```
 
 More Info on Props:
@@ -245,14 +245,14 @@ More Info on Props:
 }
 ```
 
-### 6. `PowerTableMoreFilters/>`
+### 6. &lt;PowerTableMoreFilters/&gt;
 
 Sample Usage:
 
 ```jsx
 <PowerTableMoreFilters>
   {children}
- </PowerTableMoreFilters>
+</PowerTableMoreFilters>
 ```
 
 More Info on Props:
@@ -263,7 +263,7 @@ More Info on Props:
 }
 ```
 
-### 7. `PowerTableSearchBar/>`
+### 7. &lt;PowerTableSearchBar/&gt;
 
 Sample Usage:
 
@@ -271,7 +271,7 @@ Sample Usage:
 <PowerTableSearchBar/>
 ```
 
-### 8. `<PowerTableDropdown/>`
+### 8. &lt;PowerTableDropdown/&gt;
 
 Sample Usage:
 
@@ -288,5 +288,17 @@ More Info on Props:
 }
 ```
 
+<<<<<<< HEAD
 
 
+=======
+### Methods
+
+- renderRows: A function that renders rows
+- renderColumns : A function that renders data into columns
+- renderColumnItem: A function that renders each item of a column.
+- renderCheckBox: A function that renders a checkbox
+- renderOptions : A function that renders options of a dropdown
+- renderHeaderColumns : A function that renders header columns
+- showMoreFilters: A function that helps in toggling of moreFilters Button to open a modal.
+>>>>>>> edfcca8849e323d16210621c60e4bd98f8fff5ed
