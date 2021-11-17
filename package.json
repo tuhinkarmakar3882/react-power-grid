@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "babel src/lib/components --out-dir dist --copy-files"
+    "build-npm-package": "NODE_ENV=production babel src/lib/components --out-dir dist --copy-files --presets minify"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +50,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "babel-preset-minify": "^0.5.1",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.2",
