@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { gridBodyData, gridHeaderColumns, topBarFilters } from './seed/data'
 import PowerGrid from './lib/components/PowerGrid'
 import PowerGridTopBar from './lib/components/PowerGrid/PowerGridTopBar'
 import PowerGridHeader from './lib/components/PowerGrid/PowerGridHeader'
@@ -14,53 +15,16 @@ const App = () => {
   const powerTableContainer = useRef(null)
 
   const [emittedEvent, setEmittedEvent] = useState(null)
+  const [isDataLoading] = useState(false)
 
-  const [headerColumns] = useState([
-    { id: 0, name: 'ID' },
-    { id: 1, name: 'Name' },
-    { id: 2, name: 'Age' },
-    { id: 3, name: 'Phone number' },
-    { id: 4, name: 'Something Else' }
-  ])
-  const [tableData, setTableData] = useState([
-    [true, '1', 'SuperName', 25, '+919362145879', 'Apple'],
-    [false, '2', 'New Super Name', 5, '+919362145879', 'Ice Cream'],
-    [true, '3', 'SuperName', 25, '+919362145879', 'Ice Cream'],
-    [false, '4', 'SuperName', 15, '+919362145879', 'Ice Cream'],
-    [false, '5', 'SuperName', 75, '+919362145879', 'Ice Cream']
-  ])
+  const [headerColumns] = useState(gridHeaderColumns)
+  const [gridData, setGridData] = useState(gridBodyData)
+
   const [hasNext] = useState(true)
   const [hasPrevious] = useState(false)
-  const filter = [
-    {
-      name: 'Filter Name',
-      type: 'dropdown',
-      options: [
-        'Option 1',
-        'Option 2',
-        'Option 4'
-      ]
-    },
-    {
-      name: 'Market',
-      type: 'dropdown',
-      options: [
-        'Option 1',
-        'Option 2',
-        'Option 4'
-      ]
-    },
-    {
-      name: 'Account',
-      type: 'dropdown',
-      options: [
-        'Option 1',
-        'Option 2',
-        'Option 4'
-      ],
-      custom: null
-    }
-  ]
+
+  const [filter] = useState(topBarFilters)
+  const [moreFilters] = useState(topBarFilters)
 
   const logEventDetails = ({ type, detail }) => {
     setEmittedEvent({
@@ -72,19 +36,32 @@ const App = () => {
   const handleIndividualRowSelection = (evt) => {
     logEventDetails(evt)
 
-    const newTableData = [...tableData]
-    newTableData[evt.detail.rowIdx][0] = !newTableData[evt.detail.rowIdx][0]
+    const rowIdx = evt.detail.rowIdx
+    const updatedGridData = [...gridData]
 
-    setTableData(newTableData)
+    updatedGridData[rowIdx][0] = !updatedGridData[rowIdx][0]
+    setGridData(updatedGridData)
   }
   const handleAllRowSelection = (evt) => {
     logEventDetails(evt)
 
-    setTableData(tableData.map(item => {
-      item[0] = evt.detail.checkedState
+    const checkedState = evt.detail.checkedState
+    setGridData(gridData.map(item => {
+      item[0] = checkedState
       return item
     }))
   }
+
+  const showEventDetails = () => (
+    <pre>Event Type: {emittedEvent?.type}<br/>Event Details: {JSON.stringify(emittedEvent?.detail)}</pre>
+  )
+
+  const getMoreFilters = () =>
+    moreFilters.map((item) => (
+      <li key={item.name}>
+        {item?.custom || <PowerGridDropdown item={item}/>}
+      </li>
+    ))
 
   useEffect(() => {
     powerTableContainer?.current.addEventListener('sort', logEventDetails)
@@ -104,10 +81,6 @@ const App = () => {
     powerTableContainer?.current.removeEventListener('dropdown-change', logEventDetails)
   }, [])
 
-  const showEventDetails = () => (
-    <pre>Event Type: {emittedEvent?.type}<br/>Event Details: {JSON.stringify(emittedEvent?.detail)}</pre>
-  )
-
   return (
     <div className="power-grid-demo">
       <nav>
@@ -118,29 +91,18 @@ const App = () => {
       </nav>
 
       <main ref={powerTableContainer}>
-
         <PowerGrid
-          loading={false}
+          loading={isDataLoading}
           topBar={
             <PowerGridTopBar
               filters={filter}
-              moreFilters={
-                <PowerGridMoreFilters>
-                  {filter.map((item) => (
-                    <li key={item.name}>
-                      {item?.custom || <PowerGridDropdown item={item}/>}
-                    </li>
-                  ))}
-                </PowerGridMoreFilters>
-              }
+              moreFilters={<PowerGridMoreFilters>{getMoreFilters()}</PowerGridMoreFilters>}
               searchBar={<PowerGridSearchBar/>}
             />
           }
-          tableHeader={<PowerGridHeader columns={headerColumns}/>}
-          tableBody={
-            <PowerGridBody tableData={tableData}/>
-          }
-          tableFooter={
+          gridHeader={<PowerGridHeader columns={headerColumns}/>}
+          gridBody={<PowerGridBody gridData={gridData}/>}
+          gridFooter={
             <PowerGridFooter
               hasNext={hasNext}
               hasPrevious={hasPrevious}

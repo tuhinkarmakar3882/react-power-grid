@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 
 const PowerGrid = ({
   topBar,
-  tableHeader,
-  tableBody,
-  tableFooter,
+  gridHeader,
+  gridBody,
+  gridFooter,
   loading = false,
   loadingComponent = <Spinner/>
 }) => {
@@ -14,11 +14,11 @@ const PowerGrid = ({
     <div className="power-grid">
       {topBar}
 
-      {tableHeader}
+      {gridHeader}
 
-      {loading ? loadingComponent : tableBody}
+      {loading ? loadingComponent : gridBody}
 
-      {tableFooter}
+      {gridFooter}
     </div>
   )
 }

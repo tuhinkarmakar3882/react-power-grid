@@ -15,7 +15,7 @@ const PowerGridDropdown = ({ item }) => {
       detail: {
         filter: {
           name: item.name,
-          value: target.value
+          value: [...target.options].filter(option => option.selected).map(option => option.value)
         }
       }
     }))
@@ -24,7 +24,8 @@ const PowerGridDropdown = ({ item }) => {
   return (
     <label>
       {item.name}
-      <select name={item.name} onChange={emitDropdownChangeEvent}>{renderOptions()}</select>
+      <select multiple={item?.allowMultiSelect} name={item.name}
+              onChange={emitDropdownChangeEvent}>{renderOptions()}</select>
     </label>
   )
 }

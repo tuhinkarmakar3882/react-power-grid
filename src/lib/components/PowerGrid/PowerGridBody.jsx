@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PowerGridBody = ({ tableData = [] }) => {
+const PowerGridBody = ({ gridData = [] }) => {
   const emitOnChangeEvent = ({ target }, rowIdx) => {
     target.dispatchEvent(new CustomEvent('toggle-row-selection', {
       bubbles: true,
@@ -8,7 +8,7 @@ const PowerGridBody = ({ tableData = [] }) => {
     }))
   }
 
-  const renderRows = () => tableData.map((row, rowIdx) => (
+  const renderRows = () => gridData.map((row, rowIdx) => (
     <section className="row" key={'row-' + rowIdx}>
       {renderColumns(row, rowIdx)}
     </section>

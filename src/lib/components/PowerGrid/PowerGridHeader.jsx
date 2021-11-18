@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 const PowerGridHeader = ({ columns = [] }) => {
   const [checkboxState, setCheckboxState] = useState(false)
+  const [uniqueIdentifier] = useState(Date.now())
 
   const handleEventEmission = ({ target }) => {
     if (target.tagName === 'INPUT') {
@@ -35,9 +36,10 @@ const PowerGridHeader = ({ columns = [] }) => {
     }))
   }
 
-  const renderHeaderColumns = () => columns.map(item => (
-    <section key={item.id} className="column" data-column-name={item.name} data-sort-order={undefined}>
-      {item.name}
+  const renderHeaderColumns = () => columns.map((column, idx) => (
+    <section key={`${uniqueIdentifier}-${idx}`} className="column" data-column-name={column}
+             data-sort-order={undefined}>
+      {column}
     </section>
   ))
 
