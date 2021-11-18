@@ -287,12 +287,19 @@ const filter = [
 In the Custom React Component, you can do anything you want but, remember to add a custom event emission in the onchange
 section. For example,
 
-```
-
-javascript const emitCustomEvent = ({target}) => { target.dispatchEvent(new CustomEvent('your-own-on-change-event-name',
-{ bubbles: true, detail: { filter: { name: item.name, value: target.value } } }))
+```javascript
+const emitCustomEvent = ({target}) => {
+  target.dispatchEvent(new CustomEvent('your-own-on-change-event-name', {
+      bubbles: true,
+      detail: {
+        filter: {
+          name: item.name,
+          value: target.value
+        }
+      }
+    })
+  )
 }
-
 ```
 
 Then you can add your own handler to it
