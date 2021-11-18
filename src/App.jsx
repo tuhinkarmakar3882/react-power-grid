@@ -87,21 +87,21 @@ const App = () => {
   }
 
   useEffect(() => {
-    powerTableContainer.current.addEventListener('sort', logEventDetails)
-    powerTableContainer.current.addEventListener('pagination', logEventDetails)
-    powerTableContainer.current.addEventListener('search', logEventDetails)
-    powerTableContainer.current.addEventListener('toggle-row-selection', handleIndividualRowSelection)
-    powerTableContainer.current.addEventListener('select-all-columns', handleAllRowSelection)
-    powerTableContainer.current.addEventListener('dropdown-change', logEventDetails)
+    powerTableContainer?.current.addEventListener('sort', logEventDetails)
+    powerTableContainer?.current.addEventListener('pagination', logEventDetails)
+    powerTableContainer?.current.addEventListener('search', logEventDetails)
+    powerTableContainer?.current.addEventListener('toggle-row-selection', handleIndividualRowSelection)
+    powerTableContainer?.current.addEventListener('select-all-columns', handleAllRowSelection)
+    powerTableContainer?.current.addEventListener('dropdown-change', logEventDetails)
   }, [])
 
   useEffect(() => () => {
-    powerTableContainer.current.removeEventListener('sort', logEventDetails)
-    powerTableContainer.current.removeEventListener('pagination', logEventDetails)
-    powerTableContainer.current.removeEventListener('search', logEventDetails)
-    powerTableContainer.current.removeEventListener('toggle-row-selection', handleIndividualRowSelection)
-    powerTableContainer.current.removeEventListener('select-all-columns', handleAllRowSelection)
-    powerTableContainer.current.removeEventListener('dropdown-change', logEventDetails)
+    powerTableContainer?.current.removeEventListener('sort', logEventDetails)
+    powerTableContainer?.current.removeEventListener('pagination', logEventDetails)
+    powerTableContainer?.current.removeEventListener('search', logEventDetails)
+    powerTableContainer?.current.removeEventListener('toggle-row-selection', handleIndividualRowSelection)
+    powerTableContainer?.current.removeEventListener('select-all-columns', handleAllRowSelection)
+    powerTableContainer?.current.removeEventListener('dropdown-change', logEventDetails)
   }, [])
 
   const showEventDetails = () => (
