@@ -8,11 +8,12 @@ import PowerGridSearchBar from './lib/components/PowerGrid/PowerGridSearchBar'
 import PowerGridMoreFilters from './lib/components/PowerGrid/PowerGridMoreFilters'
 import PowerGridDropdown from './lib/components/PowerGrid/PowerGridDropdown'
 import './lib/styles/PowerGrid/index.scss'
-import './lib/styles/Spinner.module.scss'
-import { Spinner } from './lib'
+import './lib/styles/Spinner.module.css'
 
 const App = () => {
   const powerTableContainer = useRef(null)
+
+  const [emittedEvent, setEmittedEvent] = useState(null)
 
   const [headerColumns] = useState([
     { id: 0, name: 'ID' },
@@ -28,11 +29,11 @@ const App = () => {
     [false, '4', 'SuperName', 15, '+919362145879', 'Ice Cream'],
     [false, '5', 'SuperName', 75, '+919362145879', 'Ice Cream']
   ])
-  const hasNext = useState(true)
-  const hasPrevious = useState(true)
+  const [hasNext] = useState(true)
+  const [hasPrevious] = useState(false)
   const filter = [
     {
-      name: 'Status',
+      name: 'Filter Name',
       type: 'dropdown',
       options: [
         'Option 1',
@@ -61,8 +62,11 @@ const App = () => {
     }
   ]
 
-  const logEventDetails = (evt) => {
-    console.log(evt.type, evt.detail)
+  const logEventDetails = ({ type, detail }) => {
+    setEmittedEvent({
+      type, detail
+    })
+    console.log(type, detail)
   }
 
   const handleIndividualRowSelection = (evt) => {
@@ -90,58 +94,69 @@ const App = () => {
     powerTableContainer.current.addEventListener('select-all-columns', handleAllRowSelection)
     powerTableContainer.current.addEventListener('dropdown-change', logEventDetails)
   }, [])
+
   useEffect(() => () => {
-    powerTableContainer?.current?.removeEventListener('sort', logEventDetails)
-    powerTableContainer?.current?.removeEventListener('pagination', logEventDetails)
-    powerTableContainer?.current?.removeEventListener('search', logEventDetails)
-    powerTableContainer?.current?.removeEventListener('toggle-row-selection', handleIndividualRowSelection)
-    powerTableContainer?.current?.removeEventListener('select-all-columns', handleAllRowSelection)
-    powerTableContainer?.current?.removeEventListener('dropdown-change', logEventDetails)
+    powerTableContainer.current.removeEventListener('sort', logEventDetails)
+    powerTableContainer.current.removeEventListener('pagination', logEventDetails)
+    powerTableContainer.current.removeEventListener('search', logEventDetails)
+    powerTableContainer.current.removeEventListener('toggle-row-selection', handleIndividualRowSelection)
+    powerTableContainer.current.removeEventListener('select-all-columns', handleAllRowSelection)
+    powerTableContainer.current.removeEventListener('dropdown-change', logEventDetails)
   }, [])
 
-  return (
-    <section ref={powerTableContainer}>
-      <PowerGrid
-        loading={!false}
-        loadingComponent={<Spinner/>}
-        topBar={
-          <PowerGridTopBar
-            filters={filter}
-            moreFilters={
-              <PowerGridMoreFilters>
-                {filter.map((item) => (
-                  <li key={item.name}>
-                    {item?.custom || <PowerGridDropdown item={item}/>}
-                  </li>
-                ))}
-              </PowerGridMoreFilters>
-            }
-            searchBar={<PowerGridSearchBar/>}
-          />
-        }
-        tableHeader={<PowerGridHeader columns={headerColumns}/>}
-        tableBody={
-          <PowerGridBody tableData={tableData}/>
-        }
-        tableFooter={
-          <PowerGridFooter
-            hasNext={hasNext}
-            hasPrevious={hasPrevious}
-            currentPage={1}
-            totalPages={1}
-          />
-        }
-      />
+  const showEventDetails = () => (
+    <pre>Event Type: {emittedEvent?.type}<br/>Event Details: {JSON.stringify(emittedEvent?.detail)}</pre>
+  )
 
-      <footer>
-        <small>[Note : Make sure to open your console to see the events popping up]
-          <br/>
-          <a href="https://tuhinkarmakar3882.github.io/react-power-grid/" target="_blank" rel="noreferrer">
-            Read the Documentation
-          </a>
-        </small>
-      </footer>
-    </section>
+  return (
+    <div className="power-grid-demo">
+      <nav>
+        <h1>React Power Grid</h1>
+        <a href="https://tuhinkarmakar3882.github.io/react-power-grid/" target="_blank" rel="noreferrer">
+          <button>View Docs</button>
+        </a>
+      </nav>
+
+      <main ref={powerTableContainer}>
+
+        <PowerGrid
+          loading={false}
+          topBar={
+            <PowerGridTopBar
+              filters={filter}
+              moreFilters={
+                <PowerGridMoreFilters>
+                  {filter.map((item) => (
+                    <li key={item.name}>
+                      {item?.custom || <PowerGridDropdown item={item}/>}
+                    </li>
+                  ))}
+                </PowerGridMoreFilters>
+              }
+              searchBar={<PowerGridSearchBar/>}
+            />
+          }
+          tableHeader={<PowerGridHeader columns={headerColumns}/>}
+          tableBody={
+            <PowerGridBody tableData={tableData}/>
+          }
+          tableFooter={
+            <PowerGridFooter
+              hasNext={hasNext}
+              hasPrevious={hasPrevious}
+              currentPage={1}
+              totalPages={1}
+            />
+          }
+        />
+      </main>
+
+      <aside className="event-info">
+        <h1>The Event Emitted:</h1>
+
+        {emittedEvent ? showEventDetails() : <pre>Listening for events...</pre>}
+      </aside>
+    </div>
   )
 }
 

@@ -2,6 +2,7 @@
   footer {
     display: flex;
     justify-content: flex-end;
-    gap: 1rem;
+    align-items: center;
+    gap: var(--spacing-standard);
   }
 }

@@ -1,5 +1,7 @@
 .power-grid {
   .power-grid-more-filters {
+    display: grid;
+    place-items: center;
     position: relative;
     isolation: isolate;
 

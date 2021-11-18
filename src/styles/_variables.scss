@@ -1,0 +1,26 @@
+:root {
+  --spacing-x-large: 1.75rem; //  28px
+  --spacing-standard: 1rem; //  16px
+  --spacing-milli: 0.75rem; //  12px
+  --spacing-micro: 0.5rem; //  8px
+  --spacing-nano: 0.25rem; //  4px
+  --spacing-single: 1px; //  1px
+  --spacing-zero: 0;
+
+  --nav-bar-color: hsl(0, 0%, 92%);
+  --body-background: hsl(0, 0%, 100%);
+  --body-background-alternate: hsl(0, 0%, 88%);
+
+  --heading-text-color: hsl(0, 0%, 0%);
+  --paragraph-color: hsl(0, 0%, 16%);
+
+  --default-shadow-color: hsla(0, 0%, 0%, .16);
+  --default-overlay: hsla(0, 0%, 0%, .48);
+
+  --button-text-size: 14px;
+  --button-bg-color: hsl(0, 0%, 0%);
+  --button-text-color: hsl(0, 0%, 100%);
+  --button-active-bg-color: hsla(0, 0%, 0%, 0.8);
+  --button-disabled-bg-color: hsl(0, 0%, 80%);
+  --button-disabled-text-color: hsl(0, 0%, 60%);
+}
