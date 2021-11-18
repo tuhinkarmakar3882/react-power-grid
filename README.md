@@ -164,6 +164,7 @@ Sample Usage:
   GridHeader={ReactComponent}
   GridBody={ReactComponent}
   GridFooter={ReactComponent}
+  loadingComponent ={ReactComponent}
 />
  ```
 
@@ -172,12 +173,15 @@ More Info on Props:
 ```json
 {
   "loading": "This is used to show/hide the spinner while fetching data from the server",
-  "topBar": "ReactComponent (<PowerGridTopBar/>)",
-  "GridHeader": "ReactComponent (<PowerGridHeader/>)",
-  "GridBody": "ReactComponent (<PowerGridBody/>)",
-  "GridFooter": "ReactComponent (<PowerGridFooter/>)"
+  "topBar": "<PowerGridTopBar/> || Any React Component",
+  "GridHeader": "Any React Component || <PowerGridHeader/>",
+  "GridBody": "Any React Component || <PowerGridBody/>",
+  "GridFooter": "Any React Component || <PowerGridFooter/>",
+  "loadingComponent": "Any React Component || <Spinner/>"
 }
 ```
+
+To use the default styling for this component please import/extend  `react-power-grid/dist/styles/PowerGrid/index.scss`
 
 Note: You can always have your custom components in place of pre-baked ones.
 
@@ -198,17 +202,17 @@ More Info on Props:
 ```json
 {
   "filters": "This is a JSON Array Of Objects which is used to provide filters that can be applied on the PowerGrid.",
-  "moreFilters": "React Component (<PowerGridMoreFilters/>",
-  "searchBar": "React Component (<PowerGridSearchBar/>)."
+  "moreFilters": "<PowerGridMoreFilters/> || Any React component",
+  "searchBar": "<PowerGridSearchBar/> || Any React Component."
 }
 ```
 
 Example of how filters Array looks like:
 
-```jsx
+```javascript
 const filter = [
     {
-      name: 'Status',
+      name: 'FilterName',
       type: 'dropdown',
       options: [
         'Option 1',
@@ -216,16 +220,7 @@ const filter = [
         'Option 4'
       ]
     },
-    {
-      name: 'Account',
-      type: 'dropdown',
-      options: [
-        'Option 1',
-        'Option 2',
-        'Option 4'
-      ],
-      custom: null
-    }
+    // more filters
   ]
 ```
 
@@ -244,9 +239,10 @@ More Info on Props:
   "columns": "This is an array of Objects that consists of header columns"
 }
 ```
+
 For Example, this is how columns array looks like:
 
-```jsx
+```javascript
 [
     { id: 0, name: 'ID' },
     { id: 1, name: 'Name' },
@@ -271,10 +267,11 @@ More Info on Props:
   "GridData": "This is a multidimensional array consisting the data that needs to be inserted in the Grid."
 }
 ```
+
 Example of how GridData looks like:
 
 ```jsx
-[   
+const GridData=[   
     [true, '1', 'SuperName', 25, '+919362145879', 'Apple'],
     [false, '4', 'SuperName', 15, '+919362145879', 'Ice Cream'],
     [false, '5', 'SuperName', 75, '+919362145879', 'Ice Cream']
@@ -358,7 +355,11 @@ For Example, we can create a PowerGrid component as follows:
             filters={filter}
             moreFilters={
               <PowerGridMoreFilters>
-              {children}
+                {filter.map((item) => (
+                  <li key={item.name}>
+                    {item?.custom || <PowerGridDropdown item={item}/>}
+                  </li>
+                ))}
               </PowerGridMoreFilters>
             }
             searchBar={<PowerGridSearchBar/>}
