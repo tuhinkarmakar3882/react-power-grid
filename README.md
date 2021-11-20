@@ -160,13 +160,22 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 You can import/extend the following as per your requirements,
 
 ### SCSS Files:
-1. `react-power-grid/dist/styles/PowerGrid/scss/PowerGrid.scss`
+1. `react-power-grid/dist/styles/PowerGrid/PowerGrid.scss`
 2. `react-power-grid/dist/styles/PowerGrid/scss/_Base.scss`
 3. `react-power-grid/dist/styles/PowerGrid/scss/_Body.scss`
 4. `react-power-grid/dist/styles/PowerGrid/scss/_Footer.scss`
 5. `react-power-grid/dist/styles/PowerGrid/scss/_Header.scss`
 6. `react-power-grid/dist/styles/PowerGrid/scss/_MoreFilters.scss`
 7. `react-power-grid/dist/styles/PowerGrid/scss/_TopBar.scss`
+
+### CSS Files:
+9. `react-power-grid/dist/styles/PowerGrid/PowerGrid.scss`
+10. `react-power-grid/dist/styles/PowerGrid/css/Base.css`
+11. `react-power-grid/dist/styles/PowerGrid/css/Body.css`
+12. `react-power-grid/dist/styles/PowerGrid/css/Footer.css`
+13. `react-power-grid/dist/styles/PowerGrid/css/Header.css`
+14. `react-power-grid/dist/styles/PowerGrid/css/MoreFilters.css`
+15. `react-power-grid/dist/styles/PowerGrid/css/TopBar.css`
 
 ## To Override/ Bring your Own StyleSheets
 
