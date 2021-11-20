@@ -1,0 +1,17 @@
+.power-grid {
+  --minimimun-column-width: 100px;
+  --maximum-column-width: 1fr;
+  --grid-body-margin: 1rem 0;
+  --header-font-weight: 600;
+  --header-font-size: 1.2rem;
+  --grid-row-gap: 0.5rem 0;
+}
+.power-grid .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--minimimun-column-width), var(--maximum-column-width)));
+}
+.power-grid ul {
+  list-style: none;
+}
+
+/*# sourceMappingURL=Base.css.map */

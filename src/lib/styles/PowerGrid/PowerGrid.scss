@@ -1,0 +1,12 @@
+@import "./scss/Base";
+@import "./scss/Header";
+@import "./scss/TopBar";
+@import "./scss/MoreFilters";
+@import "./scss/Body";
+@import "./scss/Footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

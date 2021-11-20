@@ -1,0 +1,8 @@
+.power-grid footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-standard);
+}
+
+/*# sourceMappingURL=Footer.css.map */

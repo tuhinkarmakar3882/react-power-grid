@@ -1,0 +1,13 @@
+.power-grid header {
+  font-weight: var(--header-font-weight);
+  font-size: var(--header-font-size);
+  cursor: pointer;
+}
+.power-grid header .ASC {
+  color: red;
+}
+.power-grid header .DESC {
+  color: blue;
+}
+
+/*# sourceMappingURL=Header.css.map */

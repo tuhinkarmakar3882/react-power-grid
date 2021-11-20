@@ -1,0 +1,47 @@
+.power-grid .power-grid-more-filters {
+  display: grid;
+  place-items: center;
+  position: relative;
+  isolation: isolate;
+}
+.power-grid .power-grid-more-filters aside {
+  position: fixed;
+  inset: 24%;
+  padding: 1rem;
+  z-index: 2;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), 0 0 4px 100vh rgba(0, 0, 0, 0.36);
+}
+.power-grid .power-grid-more-filters aside nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.power-grid .power-grid-more-filters aside nav::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: gray;
+  bottom: 0;
+}
+.power-grid .power-grid-more-filters aside nav p {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.power-grid .power-grid-more-filters aside nav i {
+  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  min-width: 48px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=MoreFilters.css.map */

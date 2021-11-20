@@ -47,20 +47,20 @@ This package uses the `"sass": "^1.43.4"`
 
 #### PreConfigured Layouts
 
-- `PowerGrid.jsx`
+- `PowerGrid`
 
 #### Grid Sections
 
-- `PowerGridTopBar.jsx`
-- `PowerGridHeader.jsx`
-- `PowerGridBody.jsx`
-- `PowerGridFooter.jsx`
+- `PowerGridTopBar`
+- `PowerGridHeader`
+- `PowerGridBody`
+- `PowerGridFooter`
 
 #### Utilities
 
-- `PowerGridSearchBar.jsx`
-- `PowerGridDropdown.jsx`
-- `PowerGridMoreFilters.jsx`
+- `PowerGridSearchBar`
+- `PowerGridDropdown`
+- `PowerGridMoreFilters`
 
 #### PowerGrid SCSS Styles
 
@@ -71,7 +71,7 @@ This package uses the `"sass": "^1.43.4"`
 - `Header.scss`
 - `MoreFilters.scss`
 
-> These are all partial stylesheets. You can import only the bits and pieces you need. However, if you want to use all preconfigured styles, feel free to import the `index.scss`
+> These are all partial stylesheets. You can import only the bits and pieces you need. However, if you want to use all preconfigured styles, feel free to import the `PowerGrid.scss`
 
 ---
 
@@ -159,13 +159,14 @@ This is fired whenever the user tries to select the checkbox in the header. Here
 
 You can import/extend the following as per your requirements,
 
-1. `react-power-grid/dist/styles/PowerGrid/index.scss`
-2. `react-power-grid/dist/styles/PowerGrid/_Base.scss`
-3. `react-power-grid/dist/styles/PowerGrid/_Body.scss`
-4. `react-power-grid/dist/styles/PowerGrid/_Footer.scss`
-5. `react-power-grid/dist/styles/PowerGrid/_Header.scss`
-6. `react-power-grid/dist/styles/PowerGrid/_MoreFilters.scss`
-7. `react-power-grid/dist/styles/PowerGrid/_TopBar.scss`
+### SCSS Files:
+1. `react-power-grid/dist/styles/PowerGrid/scss/PowerGrid.scss`
+2. `react-power-grid/dist/styles/PowerGrid/scss/_Base.scss`
+3. `react-power-grid/dist/styles/PowerGrid/scss/_Body.scss`
+4. `react-power-grid/dist/styles/PowerGrid/scss/_Footer.scss`
+5. `react-power-grid/dist/styles/PowerGrid/scss/_Header.scss`
+6. `react-power-grid/dist/styles/PowerGrid/scss/_MoreFilters.scss`
+7. `react-power-grid/dist/styles/PowerGrid/scss/_TopBar.scss`
 
 ## To Override/ Bring your Own StyleSheets
 
@@ -221,7 +222,7 @@ More Info on Props:
 }
 ```
 
-To use the default styling for this component please import/extend  `react-power-grid/dist/styles/PowerGrid/index.scss`
+To use the default styling for this component please import/extend  `react-power-grid/dist/styles/PowerGrid/PowerGrid.scss`
 
 Note: You can always have your custom components in place of pre-baked ones.
 
@@ -506,7 +507,7 @@ import {
   PowerGridSearchBar,
   PowerGridTopBar,
 } from 'react-power-grid'
-import 'react-power-grid/dist/styles/PowerGrid/index.scss'
+import 'react-power-grid/dist/styles/PowerGrid/PowerGrid.scss'
 
 const App = () => {
   const powerTableContainer = useRef(null)
