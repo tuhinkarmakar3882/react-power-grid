@@ -1,0 +1,20 @@
+div.power-grid-demo {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--spacing-standard);
+}
+div.power-grid-demo > * {
+  padding-inline: var(--spacing-standard);
+}
+div.power-grid-demo > nav {
+  padding: var(--spacing-micro) var(--spacing-standard);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nav-bar-color);
+}
+div.power-grid-demo aside.event-info * + * {
+  margin: 1rem 0;
+}
+
+/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,83 @@
+:root {
+  --spacing-x-large: 1.75rem;
+  --spacing-standard: 1rem;
+  --spacing-milli: 0.75rem;
+  --spacing-micro: 0.5rem;
+  --spacing-nano: 0.25rem;
+  --spacing-single: 1px;
+  --spacing-zero: 0;
+  --nav-bar-color: hsl(0, 0%, 92%);
+  --body-background: hsl(0, 0%, 100%);
+  --body-background-alternate: hsl(0, 0%, 88%);
+  --heading-text-color: hsl(0, 0%, 0%);
+  --paragraph-color: hsl(0, 0%, 16%);
+  --default-shadow-color: hsla(0, 0%, 0%, .16);
+  --default-overlay: hsla(0, 0%, 0%, .48);
+  --button-text-size: 14px;
+  --button-bg-color: hsl(0, 0%, 0%);
+  --button-text-color: hsl(0, 0%, 100%);
+  --button-active-bg-color: hsla(0, 0%, 0%, 0.8);
+  --button-disabled-bg-color: hsl(0, 0%, 80%);
+  --button-disabled-text-color: hsl(0, 0%, 60%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 250ms ease-in-out;
+}
+
+body {
+  font-family: sans-serif;
+  overflow-x: hidden;
+  background: var(--body-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: serif;
+}
+
+p, span {
+  font-family: sans-serif;
+  color: var(--paragraph-color);
+}
+
+pre, code {
+  font-family: monospace;
+  font-size: var(--spacing-standard);
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: var(--button-text-color);
+  font-size: var(--button-text-size);
+  border-radius: var(--spacing-nano);
+  outline-color: var(--heading-text-color);
+  background-color: var(--button-bg-color);
+  padding: var(--spacing-milli) var(--spacing-x-large);
+  box-shadow: var(--spacing-zero) var(--spacing-zero) var(--spacing-nano) var(--default-shadow-color);
+}
+button:disabled {
+  cursor: not-allowed;
+  color: var(--button-disabled-text-color);
+  background-color: var(--button-disabled-bg-color);
+}
+button:hover:not(:disabled), button:focus:not(:disabled) {
+  background-color: var(--button-active-bg-color);
+  transform: scale(1.05);
+}
+button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+input[type=text] {
+  display: inline-block;
+  padding: var(--spacing-micro) var(--spacing-standard);
+  border: 1px solid #a3a3a3;
+  border-radius: var(--spacing-nano);
+}
+
+/*# sourceMappingURL=default.css.map */
